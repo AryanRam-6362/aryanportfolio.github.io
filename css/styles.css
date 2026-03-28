@@ -147,6 +147,7 @@ header.scrolled {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-xl);
+    width: 100%;
 }
 
 .logo {
@@ -159,6 +160,7 @@ header.scrolled {
     background-clip: text;
     cursor: pointer;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .logo:hover {
@@ -174,6 +176,10 @@ header.scrolled {
     list-style: none;
     gap: var(--spacing-xl);
     align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .nav-link {
@@ -213,6 +219,103 @@ header.scrolled {
     display: flex;
     gap: var(--spacing-md);
     align-items: center;
+    margin-left: 40px;
+    flex-shrink: 0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: var(--spacing-sm);
+    padding: 0;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2.5px;
+    background: var(--text-light);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ============ RESPONSIVE NAVIGATION ============ */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: linear-gradient(180deg, rgba(15, 20, 25, 0.98) 0%, rgba(26, 35, 50, 0.95) 100%);
+        padding: 25px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        margin-left: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-controls {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-wrapper {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        padding: 20px;
+        top: 60px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .header-controls {
+        gap: 15px;
+        margin-left: 15px;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+    }
 }
 
 .theme-toggle {
