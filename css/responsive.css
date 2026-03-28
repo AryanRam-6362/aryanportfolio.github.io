@@ -1,0 +1,421 @@
+/* ============ TABLET DEVICES (768px - 1024px) ============ */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 30px;
+    }
+
+    .nav-wrapper {
+        padding: 0 30px;
+    }
+
+    .hero-container {
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .expertise-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ============ MOBILE DEVICES (480px - 768px) ============ */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 20px;
+        --spacing-lg: 16px;
+    }
+
+    /* Header & Navigation */
+    .nav-wrapper {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba(15, 20, 25, 0.98) 0%, rgba(26, 35, 50, 0.95) 100%);
+        padding: 25px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-tagline {
+        font-size: 18px;
+    }
+
+    .hero-intro {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    /* Statistics */
+    .statistics {
+        padding: 60px 20px;
+    }
+
+    .statistics-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    /* Expertise & Sections */
+    .expertise,
+    .featured-projects,
+    .portfolio-nav,
+    .testimonials,
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 22px; }
+
+    .expertise-grid,
+    .featured-grid,
+    .nav-cards,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .expertise-card {
+        padding: 30px 20px;
+    }
+
+    .featured-card {
+        overflow: hidden;
+    }
+
+    .featured-content {
+        padding: 20px;
+    }
+
+    .featured-content h3 {
+        font-size: 18px;
+    }
+
+    .nav-card {
+        padding: 35px 25px;
+    }
+
+    .nav-card h3 {
+        font-size: 22px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 40px 20px 30px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-section nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }
+}
+
+/* ============ SMALL MOBILE (320px - 480px) ============ */
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 12px;
+        --spacing-md: 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .hero-intro {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+    h4 { font-size: 16px; }
+
+    .expertise-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .expertise-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .expertise-card p {
+        font-size: 13px;
+    }
+
+    .expertise-tags li {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .stat-number {
+        font-size: 42px;
+    }
+
+    .stat-number span {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .featured-content {
+        padding: 15px;
+    }
+
+    .featured-content h3 {
+        font-size: 16px;
+    }
+
+    .featured-content p {
+        font-size: 13px;
+    }
+
+    .project-stats {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .project-stats span {
+        font-size: 11px;
+    }
+
+    .nav-cards {
+        gap: 20px;
+    }
+
+    .nav-card {
+        padding: 25px 20px;
+    }
+
+    .nav-card h3 {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .nav-icon {
+        font-size: 24px;
+    }
+
+    .nav-card p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+    .testimonial-text {
+        font-size: 13px;
+    }
+
+    .cta-section h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .cta-section p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    footer {
+        padding: 30px 15px 20px;
+    }
+
+    .social-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .footer-section p {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+    }
+
+    .footer-bottom p:last-child {
+        font-size: 10px;
+    }
+}
+
+/* ============ LANDSCAPE ORIENTATION ============ */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 40px var(--spacing-xl);
+    }
+
+    .hero-container {
+        gap: 40px;
+    }
+}
+
+/* ============ ULTRA-WIDE SCREENS ============ */
+@media (min-width: 1400px) {
+    .nav-wrapper,
+    .expertise-container,
+    .featured-projects-container,
+    .portfolio-nav-container,
+    .testimonials-container,
+    .footer-content {
+        max-width: 1600px;
+    }
+}
+
+/* ============ PRINT STYLES ============ */
+@media print {
+    header,
+    footer,
+    .menu-toggle,
+    .theme-toggle,
+    .cta-section {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        color: #0066cc;
+        text-decoration: underline;
+    }
+
+    .btn {
+        border: 1px solid #000;
+    }
+}

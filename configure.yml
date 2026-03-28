@@ -1,0 +1,20 @@
+# Jekyll configuration for GitHub Pages
+title: "Aryan | Mechanical Engineer Portfolio"
+description: "Innovation in Sustainable Materials, Manufacturing & AI Quality Engineering"
+url: "https://yourdomain.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Excludes
+exclude:
+  - node_modules
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
