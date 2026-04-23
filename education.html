@@ -9,7 +9,6 @@
     <meta name="theme-color" content="#0F1419">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph for Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Educational Qualifications | Aryan Ram">
     <meta property="og:description" content="Academic credentials, certifications, and specialized training in mechanical engineering.">
@@ -19,12 +18,10 @@
     <link rel="canonical" href="https://aryanram-6362.github.io/aryanportfolio.github.io/education.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -297,7 +294,7 @@
         .timeline-item-bottom {
             position: absolute;
             bottom: -180px;
-            left: 50%;
+            left: 75%; /* Pushed further right between UCD and SUPSI */
             transform: translateX(-50%);
             width: auto;
         }
@@ -556,10 +553,8 @@
     </style>
 </head>
 <body>
-    <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ============ HEADER & NAVIGATION ============ -->
     <header role="banner">
         <nav role="navigation" aria-label="Main Navigation">
             <div class="nav-wrapper">
@@ -586,36 +581,28 @@
         </nav>
     </header>
 
-    <!-- ============ PAGE HERO ============ -->
     <section class="page-hero">
         <h1>Educational Qualifications</h1>
         <p>Academic credentials, specialized certifications, and continuous learning initiatives that demonstrate expertise and commitment to professional development in mechanical engineering.</p>
     </section>
 
-    <!-- ============ ACADEMIC EDUCATION SECTION - TIMELINE ============ -->
     <section class="education-section" id="academic-education" aria-label="Academic Education">
         <div class="education-container">
             <h2 class="section-title">Academic Degrees</h2>
             
-            <!-- Timeline Container -->
             <div class="timeline-wrapper">
-                <!-- SVG Connector Lines -->
                 <div class="timeline-svg-connector" id="timelineSvgContainer">
                     <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
-                        <!-- Center connector: UCD to EIT (Item B to Item D) -->
-                        <path class="connector-line" d="M 600 130 L 600 350" />
-                        <polygon class="connector-arrow" points="600,350 595,335 605,335" />
+                        <path class="connector-line" d="M 600 130 Q 600 240, 750 260 L 900 350" />
+                        <polygon class="connector-arrow" points="900,350 885,340 895,332" />
                         
-                        <!-- Right connector: SUPSI to EIT (Item C to Item D) -->
-                        <path class="connector-line" d="M 1000 130 Q 1000 250, 900 280 L 600 400" />
-                        <polygon class="connector-arrow" points="600,400 592,392 605,385" />
+                        <path class="connector-line" d="M 1000 130 Q 1000 240, 950 260 L 900 350" />
+                        <polygon class="connector-arrow" points="900,350 898,335 912,340" />
                     </svg>
                 </div>
 
                 <div class="timeline-container">
-                    <!-- Timeline Items -->
                     <div class="timeline-items">
-                        <!-- Item A: VIT (No connector) -->
                         <div class="timeline-item timeline-item-top" style="--position: 10%;">
                             <div class="timeline-circle-wrapper">
                                 <div class="timeline-popup hidden" id="popup-a">
@@ -638,7 +625,6 @@
                             </div>
                         </div>
 
-                        <!-- Item B: UCD (Connects to EIT) -->
                         <div class="timeline-item timeline-item-top" style="--position: 35%;">
                             <div class="timeline-circle-wrapper">
                                 <div class="timeline-popup hidden" id="popup-b">
@@ -661,7 +647,27 @@
                             </div>
                         </div>
 
-                        <!-- Item C: SUPSI (Connects to EIT) -->
+                        <div class="timeline-item timeline-item-bottom" style="--position: 75%;">
+                            <div class="timeline-circle-wrapper">
+                                <div class="timeline-popup hidden" id="popup-d">
+                                    <div class="popup-header">EIT Manufacturing</div>
+                                    <div class="popup-detail"><strong>Programme Type:</strong> European Master's with dual/triple degree pathways</div>
+                                    <div class="popup-detail"><strong>Co-Funded by:</strong> European Union & EIT (European Institute of Innovation and Technology)</div>
+                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present (as part of UCD & SUPSI)</div>
+                                    <div class="popup-detail"><strong>Focus:</strong> Innovation & Entrepreneurship + Manufacturing Excellence</div>
+                                    <div class="popup-detail"><strong>Status:</strong> Parallel with M.Eng & MSE programmes</div>
+                                </div>
+                                <div class="timeline-circle" id="circle-d">
+                                    <img src="./images/education/eit_manufacturing_logo-removebg-preview-2.png" alt="EIT Manufacturing Logo" class="university-logo">
+                                </div>
+                            </div>
+                            <div class="timeline-info">
+                                <p class="timeline-year">2024 - Present</p>
+                                <p class="timeline-degree">EIT Manufacturing | Co-Funded by European Commission</p>
+                                <p class="timeline-university">Multi-Location Programme</p>
+                            </div>
+                        </div>
+
                         <div class="timeline-item timeline-item-top" style="--position: 60%;">
                             <div class="timeline-circle-wrapper">
                                 <div class="timeline-popup hidden" id="popup-c">
@@ -684,34 +690,12 @@
                             </div>
                         </div>
 
-                        <!-- Item D: EIT Manufacturing (Center Bottom) -->
-                        <div class="timeline-item timeline-item-bottom" style="--position: 50%;">
-                            <div class="timeline-circle-wrapper">
-                                <div class="timeline-popup hidden" id="popup-d">
-                                    <div class="popup-header">EIT Manufacturing</div>
-                                    <div class="popup-detail"><strong>Programme Type:</strong> European Master's with dual/triple degree pathways</div>
-                                    <div class="popup-detail"><strong>Co-Funded by:</strong> European Union & EIT (European Institute of Innovation and Technology)</div>
-                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present (as part of UCD & SUPSI)</div>
-                                    <div class="popup-detail"><strong>Focus:</strong> Innovation & Entrepreneurship + Manufacturing Excellence</div>
-                                    <div class="popup-detail"><strong>Status:</strong> Parallel with M.Eng & MSE programmes</div>
-                                </div>
-                                <div class="timeline-circle" id="circle-d">
-                                    <img src="./images/education/eit_manufacturing_logo-removebg-preview-2.png" alt="EIT Manufacturing Logo" class="university-logo">
-                                </div>
-                            </div>
-                            <div class="timeline-info">
-                                <p class="timeline-year">2024 - Present</p>
-                                <p class="timeline-degree">EIT Manufacturing | Co-Funded by European Commission</p>
-                                <p class="timeline-university">Multi-Location Programme</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ PROFESSIONAL CERTIFICATIONS ============ -->
     <section class="certifications-section" id="certifications" aria-label="Professional Certifications">
         <div class="education-container">
             <h2 class="section-title">Professional Certifications</h2>
@@ -761,7 +745,6 @@
         </div>
     </section>
 
-    <!-- ============ TECHNICAL SKILLS & TRAINING ============ -->
     <section class="education-section" id="technical-training" aria-label="Technical Training">
         <div class="education-container">
             <h2 class="section-title">Technical Training & Courses</h2>
@@ -849,7 +832,6 @@
         </div>
     </section>
 
-    <!-- ============ CTA SECTION ============ -->
     <section class="cta-section" aria-label="Call to Action">
         <div class="cta-container">
             <h2>Interested in Collaborating?</h2>
@@ -858,7 +840,6 @@
         </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
     <footer role="contentinfo" id="footer">
         <div class="footer-content">
             <div class="footer-main">
@@ -928,10 +909,8 @@
         </div>
     </footer>
 
-    <!-- Main Content ID for Skip Link -->
     <div id="main-content" style="display: none;"></div>
 
-    <!-- Scripts -->
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
     
