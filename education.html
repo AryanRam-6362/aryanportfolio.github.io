@@ -220,6 +220,293 @@
             line-height: 1.8;
         }
 
+        /* ============ TIMELINE STYLES ============ */
+        .timeline-wrapper {
+            margin-top: 4rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 2rem 1rem 20rem 1rem;
+            width: 100%;
+        }
+
+        .timeline-items {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            min-height: 500px;
+        }
+
+        /* SVG Connector Lines */
+        .timeline-svg-connector {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .timeline-svg-connector svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .connector-line {
+            fill: none;
+            stroke: #00D9FF;
+            stroke-width: 2;
+            stroke-dasharray: 8, 5;
+            opacity: 0.6;
+            animation: dashAnimation 20s linear infinite;
+        }
+
+        @keyframes dashAnimation {
+            0% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dashoffset: 13;
+            }
+        }
+
+        .connector-arrow {
+            fill: #00D9FF;
+            opacity: 0.6;
+        }
+
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            flex: 0 1 auto;
+        }
+
+        .timeline-item-top {
+            align-self: flex-start;
+        }
+
+        .timeline-item-bottom {
+            position: absolute;
+            bottom: -180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+        }
+
+        .timeline-circle-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), #00B8D4);
+            border: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
+            position: relative;
+            animation: circleAppear 0.8s ease-out;
+            flex-shrink: 0;
+        }
+
+        @keyframes circleAppear {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .timeline-circle:hover {
+            transform: scale(1.12);
+            box-shadow: 0 12px 36px rgba(0, 217, 255, 0.5);
+        }
+
+        .university-logo {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            padding: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* ============ POPUP STYLES ============ */
+        .timeline-popup {
+            position: absolute;
+            bottom: 145px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            width: 300px;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 12px 40px rgba(0, 217, 255, 0.25);
+            z-index: 10;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: none;
+            opacity: 0;
+            white-space: normal;
+        }
+
+        .timeline-popup::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px;
+            height: 16px;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-color);
+            border-top: none;
+            border-left: none;
+        }
+
+        .timeline-popup.visible {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+            animation: popupAppear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: auto;
+        }
+
+        .timeline-popup.hidden {
+            display: none;
+        }
+
+        @keyframes popupAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) scale(1) translateY(0);
+            }
+        }
+
+        .popup-header {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .popup-detail {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .popup-detail strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* ============ TIMELINE INFO STYLES ============ */
+        .timeline-info {
+            margin-top: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-degree {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-university {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* ============ RESPONSIVE TIMELINE ============ */
+        @media (max-width: 1024px) {
+            .timeline-items {
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+            }
+
+            .timeline-item {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timeline-item-bottom {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 2rem;
+            }
+
+            .timeline-circle {
+                width: 110px;
+                height: 110px;
+            }
+
+            .timeline-popup {
+                position: relative;
+                transform: scale(0);
+                opacity: 0;
+                bottom: auto;
+                margin-top: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .timeline-popup.visible {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            .timeline-popup::after {
+                display: none;
+            }
+
+            /* Hide SVG on tablets and below */
+            .timeline-svg-connector {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .page-hero h1 {
                 font-size: 2rem;
@@ -227,6 +514,35 @@
 
             .page-hero p {
                 font-size: 1rem;
+            }
+
+            .timeline-container {
+                padding: 2rem 0.5rem 10rem 0.5rem;
+            }
+
+            .timeline-items {
+                gap: 2rem;
+            }
+
+            .timeline-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .timeline-year {
+                font-size: 1.1rem;
+            }
+
+            .timeline-degree {
+                font-size: 0.9rem;
+            }
+
+            .timeline-university {
+                font-size: 0.85rem;
+            }
+
+            .timeline-info {
+                padding: 0;
             }
 
             .education-grid {
@@ -277,435 +593,124 @@
     </section>
 
     <!-- ============ ACADEMIC EDUCATION SECTION - TIMELINE ============ -->
-<section class="education-section" id="academic-education" aria-label="Academic Education">
-    <div class="education-container">
-        <h2 class="section-title">Academic Degrees</h2>
-        
-        <!-- Timeline Container -->
-        <div class="timeline-wrapper">
-            <div class="timeline-container">
-                <!-- Timeline Items -->
-                <div class="timeline-items">
-                    <!-- Item A -->
-                    <div class="timeline-item timeline-item-top" style="--position: 10%;">
-                        <div class="timeline-circle-wrapper">
-                            <div class="timeline-popup hidden" id="popup-a">
-                                <div class="popup-header">Bachelor of Technology (B.Tech)</div>
-                                <div class="popup-detail"><strong>Degree:</strong> B.Tech Mechanical Engineering</div>
-                                <div class="popup-detail"><strong>Year:</strong> 2018 - 2022</div>
-                                <div class="popup-detail"><strong>Institution:</strong> Vellore Institute of Technology(VIT) Bhopal</div>
-                                <div class="popup-detail"><strong>Location:</strong> Bhopal, India</div>
-                                <div class="popup-detail"><strong>GPA:</strong> 8.2/10.0</div>
-                                <div class="popup-detail"><strong>Focus:</strong> Mechanical Engineering Principles, Thermodynamics, Fluid Mechanics, Manufacturing Processes, CAD Design, Material Engineering and Technology</div>
-                            </div>
-                            <div class="timeline-circle" id="circle-a">
-                                <img src="./images/education/Vellore_Institute_of_Technology_seal_2017.svg.png" alt="VIT Bhopal Logo" class="university-logo">
-                            </div>
-                        </div>
-                        <div class="timeline-info">
-                            <p class="timeline-year">2022</p>
-                            <p class="timeline-degree">Bachelor of Technology (B.Tech). Mechanical Engineering</p>
-                            <p class="timeline-university">Vellore Institute of Technology(VIT) Bhopal, India</p>
-                        </div>
-                    </div>
+    <section class="education-section" id="academic-education" aria-label="Academic Education">
+        <div class="education-container">
+            <h2 class="section-title">Academic Degrees</h2>
+            
+            <!-- Timeline Container -->
+            <div class="timeline-wrapper">
+                <!-- SVG Connector Lines -->
+                <div class="timeline-svg-connector" id="timelineSvgContainer">
+                    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+                        <!-- Center connector: UCD to EIT (Item B to Item D) -->
+                        <path class="connector-line" d="M 600 130 L 600 350" />
+                        <polygon class="connector-arrow" points="600,350 595,335 605,335" />
+                        
+                        <!-- Right connector: SUPSI to EIT (Item C to Item D) -->
+                        <path class="connector-line" d="M 1000 130 Q 1000 250, 900 280 L 600 400" />
+                        <polygon class="connector-arrow" points="600,400 592,392 605,385" />
+                    </svg>
+                </div>
 
-                    <!-- Item B -->
-                    <div class="timeline-item timeline-item-top" style="--position: 35%;">
-                        <div class="timeline-circle-wrapper">
-                            <div class="timeline-popup hidden" id="popup-b">
-                                <div class="popup-header">Master of Engineering (M.Eng)</div>
-                                <div class="popup-detail"><strong>Degree:</strong> Masters of Engineering Manufacturing Engineering</div>
-                                <div class="popup-detail"><strong>Year:</strong> 2024 - Present</div>
-                                <div class="popup-detail"><strong>Institution:</strong> UCD, Dublin</div>
-                                <div class="popup-detail"><strong>Location:</strong> Dublin, Ireland</div>
-                                <div class="popup-detail"><strong>Thesis:</strong> Digital Manufacturing for Innovative Ecosystems and Sustainable Manufacturing</div>
-                                <div class="popup-detail"><strong>Focus:</strong> Sustainable Materials, Advanced Manufacturing Processes, Process Optimization, AI in Quality Engineering</div>
+                <div class="timeline-container">
+                    <!-- Timeline Items -->
+                    <div class="timeline-items">
+                        <!-- Item A: VIT (No connector) -->
+                        <div class="timeline-item timeline-item-top" style="--position: 10%;">
+                            <div class="timeline-circle-wrapper">
+                                <div class="timeline-popup hidden" id="popup-a">
+                                    <div class="popup-header">Bachelor of Technology (B.Tech)</div>
+                                    <div class="popup-detail"><strong>Degree:</strong> B.Tech Mechanical Engineering</div>
+                                    <div class="popup-detail"><strong>Year:</strong> 2018 - 2022</div>
+                                    <div class="popup-detail"><strong>Institution:</strong> Vellore Institute of Technology(VIT) Bhopal</div>
+                                    <div class="popup-detail"><strong>Location:</strong> Bhopal, India</div>
+                                    <div class="popup-detail"><strong>GPA:</strong> 8.2/10.0</div>
+                                    <div class="popup-detail"><strong>Focus:</strong> Mechanical Engineering Principles, Thermodynamics, Fluid Mechanics, Manufacturing Processes, CAD Design, Material Engineering and Technology</div>
+                                </div>
+                                <div class="timeline-circle" id="circle-a">
+                                    <img src="./images/education/Vellore_Institute_of_Technology_seal_2017.svg.png" alt="VIT Bhopal Logo" class="university-logo">
+                                </div>
                             </div>
-                            <div class="timeline-circle" id="circle-b">
-                                <img src="./images/education/images-Photoroom-removebg-preview.png" alt="UCD Logo" class="university-logo">
+                            <div class="timeline-info">
+                                <p class="timeline-year">2022</p>
+                                <p class="timeline-degree">Bachelor of Technology (B.Tech). Mechanical Engineering</p>
+                                <p class="timeline-university">Vellore Institute of Technology(VIT) Bhopal, India</p>
                             </div>
                         </div>
-                        <div class="timeline-info">
-                            <p class="timeline-year">2024 - Present</p>
-                            <p class="timeline-degree">M.Eng Manufacturing Engineering</p>
-                            <p class="timeline-university">UCD, Dublin, Ireland</p>
-                        </div>
-                    </div>
 
-                    <!-- Item C -->
-                    <div class="timeline-item timeline-item-top" style="--position: 60%;">
-                        <div class="timeline-circle-wrapper">
-                            <div class="timeline-popup hidden" id="popup-c">
-                                <div class="popup-header">Master of Science and Engineering (MSE)</div>
-                                <div class="popup-detail"><strong>Qualification:</strong> Business Engineering</div>
-                                <div class="popup-detail"><strong>Year:</strong> 2025 - Present</div>
-                                <div class="popup-detail"><strong>Institution:</strong> Scuola universitaria professionale della Svizzera italiana - SUPSI</div>
-                                <div class="popup-detail"><strong>Location:</strong> Lugano, Switzerland</div>
-                                <div class="popup-detail"><strong>Specialization:</strong> ISO 9001, Quality Control, Continuous Improvement</div>
-                                <div class="popup-detail"><strong>Focus:</strong> Quality Management Systems Implementation, Statistical Process Control, ASTM Standards</div>
+                        <!-- Item B: UCD (Connects to EIT) -->
+                        <div class="timeline-item timeline-item-top" style="--position: 35%;">
+                            <div class="timeline-circle-wrapper">
+                                <div class="timeline-popup hidden" id="popup-b">
+                                    <div class="popup-header">Master of Engineering (M.Eng)</div>
+                                    <div class="popup-detail"><strong>Degree:</strong> Masters of Engineering Manufacturing Engineering</div>
+                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present</div>
+                                    <div class="popup-detail"><strong>Institution:</strong> UCD, Dublin</div>
+                                    <div class="popup-detail"><strong>Location:</strong> Dublin, Ireland</div>
+                                    <div class="popup-detail"><strong>Thesis:</strong> Digital Manufacturing for Innovative Ecosystems and Sustainable Manufacturing</div>
+                                    <div class="popup-detail"><strong>Focus:</strong> Sustainable Materials, Advanced Manufacturing Processes, Process Optimization, AI in Quality Engineering</div>
+                                </div>
+                                <div class="timeline-circle" id="circle-b">
+                                    <img src="./images/education/images-Photoroom-removebg-preview.png" alt="UCD Logo" class="university-logo">
+                                </div>
                             </div>
-                            <div class="timeline-circle" id="circle-c">
-                                <img src="./images/education/Logo_of_SUPSI_Scuola_universitaria_professionale_della_Svizzera_italiana_01.png" alt="SUPSI Logo" class="university-logo">
+                            <div class="timeline-info">
+                                <p class="timeline-year">2024 - Present</p>
+                                <p class="timeline-degree">M.Eng Manufacturing Engineering</p>
+                                <p class="timeline-university">UCD, Dublin, Ireland</p>
                             </div>
                         </div>
-                        <div class="timeline-info">
-                            <p class="timeline-year">2025 - Present</p>
-                            <p class="timeline-degree">MSE Business Engineering</p>
-                            <p class="timeline-university">Lugano, Switzerland</p>
-                        </div>
-                    </div>
 
-                    <!-- Item D (Bottom) -->
-                    <div class="timeline-item timeline-item-bottom" style="--position: 47.5%;">
-                        <div class="timeline-circle-wrapper">
-                            <div class="timeline-popup hidden" id="popup-d">
-                                <div class="popup-header">EIT Manufacturing</div>
-                                <div class="popup-detail"><strong>Programme Type:</strong> European Master's with dual/triple degree pathways</div>
-                                <div class="popup-detail"><strong>Co-Funded by:</strong> European Union & EIT (European Institute of Innovation and Technology)</div>
-                                <div class="popup-detail"><strong>Year:</strong> 2024 - Present (as part of UCD & SUPSI)</div>
-                                <div class="popup-detail"><strong>Focus:</strong> Innovation & Entrepreneurship + Manufacturing Excellence</div>
-                                <div class="popup-detail"><strong>Status:</strong> Parallel with M.Eng & MSE programmes</div>
+                        <!-- Item C: SUPSI (Connects to EIT) -->
+                        <div class="timeline-item timeline-item-top" style="--position: 60%;">
+                            <div class="timeline-circle-wrapper">
+                                <div class="timeline-popup hidden" id="popup-c">
+                                    <div class="popup-header">Master of Science and Engineering (MSE)</div>
+                                    <div class="popup-detail"><strong>Qualification:</strong> Business Engineering</div>
+                                    <div class="popup-detail"><strong>Year:</strong> 2025 - Present</div>
+                                    <div class="popup-detail"><strong>Institution:</strong> Scuola universitaria professionale della Svizzera italiana - SUPSI</div>
+                                    <div class="popup-detail"><strong>Location:</strong> Lugano, Switzerland</div>
+                                    <div class="popup-detail"><strong>Specialization:</strong> ISO 9001, Quality Control, Continuous Improvement</div>
+                                    <div class="popup-detail"><strong>Focus:</strong> Quality Management Systems Implementation, Statistical Process Control, ASTM Standards</div>
+                                </div>
+                                <div class="timeline-circle" id="circle-c">
+                                    <img src="./images/education/Logo_of_SUPSI_Scuola_universitaria_professionale_della_Svizzera_italiana_01.png" alt="SUPSI Logo" class="university-logo">
+                                </div>
                             </div>
-                            <div class="timeline-circle" id="circle-d">
-                                <img src="./images/education/eit_manufacturing_logo-removebg-preview-2.png" alt="EIT Manufacturing Logo" class="university-logo">
+                            <div class="timeline-info">
+                                <p class="timeline-year">2025 - Present</p>
+                                <p class="timeline-degree">MSE Business Engineering</p>
+                                <p class="timeline-university">Lugano, Switzerland</p>
                             </div>
                         </div>
-                        <div class="timeline-info">
-                            <p class="timeline-year">2024 - Present</p>
-                            <p class="timeline-degree">EIT Manufacturing | Co-Funded by European Commission</p>
-                            <p class="timeline-university">Multi-Location Programme</p>
+
+                        <!-- Item D: EIT Manufacturing (Center Bottom) -->
+                        <div class="timeline-item timeline-item-bottom" style="--position: 50%;">
+                            <div class="timeline-circle-wrapper">
+                                <div class="timeline-popup hidden" id="popup-d">
+                                    <div class="popup-header">EIT Manufacturing</div>
+                                    <div class="popup-detail"><strong>Programme Type:</strong> European Master's with dual/triple degree pathways</div>
+                                    <div class="popup-detail"><strong>Co-Funded by:</strong> European Union & EIT (European Institute of Innovation and Technology)</div>
+                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present (as part of UCD & SUPSI)</div>
+                                    <div class="popup-detail"><strong>Focus:</strong> Innovation & Entrepreneurship + Manufacturing Excellence</div>
+                                    <div class="popup-detail"><strong>Status:</strong> Parallel with M.Eng & MSE programmes</div>
+                                </div>
+                                <div class="timeline-circle" id="circle-d">
+                                    <img src="./images/education/eit_manufacturing_logo-removebg-preview-2.png" alt="EIT Manufacturing Logo" class="university-logo">
+                                </div>
+                            </div>
+                            <div class="timeline-info">
+                                <p class="timeline-year">2024 - Present</p>
+                                <p class="timeline-degree">EIT Manufacturing | Co-Funded by European Commission</p>
+                                <p class="timeline-university">Multi-Location Programme</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-/* ============ TIMELINE STYLES ============ */
-.timeline-wrapper {
-    margin-top: 4rem;
-    position: relative;
-    width: 100%;
-}
-
-.timeline-container {
-    position: relative;
-    padding: 2rem 1rem 15rem 1rem;
-    width: 100%;
-}
-
-.timeline-items {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    min-height: 400px;
-}
-
-.timeline-item {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-    flex: 0 1 auto;
-}
-
-.timeline-item-top {
-    align-self: flex-start;
-}
-
-.timeline-item-bottom {
-    position: absolute;
-    bottom: -150px;
-    left: 47.5%;
-    transform: translateX(-50%);
-    width: auto;
-}
-
-.timeline-circle-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.timeline-circle {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), #00B8D4);
-    border: 3px solid var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
-    position: relative;
-    animation: circleAppear 0.8s ease-out;
-    flex-shrink: 0;
-}
-
-@keyframes circleAppear {
-    from {
-        opacity: 0;
-        transform: scale(0);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.timeline-circle:hover {
-    transform: scale(1.12);
-    box-shadow: 0 12px 36px rgba(0, 217, 255, 0.5);
-}
-
-.university-logo {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-    padding: 15px;
-    filter: brightness(0) invert(1);
-}
-
-/* ============ POPUP STYLES ============ */
-.timeline-popup {
-    position: absolute;
-    bottom: 145px;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    width: 300px;
-    background: var(--bg-white);
-    border: 2px solid var(--primary-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 12px 40px rgba(0, 217, 255, 0.25);
-    z-index: 10;
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    animation: none;
-    opacity: 0;
-    white-space: normal;
-}
-
-.timeline-popup::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 16px;
-    height: 16px;
-    background: var(--bg-white);
-    border: 2px solid var(--primary-color);
-    border-top: none;
-    border-left: none;
-}
-
-.timeline-popup.visible {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-    animation: popupAppear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    pointer-events: auto;
-}
-
-.timeline-popup.hidden {
-    display: none;
-}
-
-@keyframes popupAppear {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) scale(0.8) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1) translateY(0);
-    }
-}
-
-.popup-header {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.popup-detail {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-    text-align: left;
-}
-
-.popup-detail strong {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-/* ============ TIMELINE INFO STYLES ============ */
-.timeline-info {
-    margin-top: 1.5rem;
-    padding: 0 1rem;
-}
-
-.timeline-year {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.timeline-degree {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 0.3rem;
-}
-
-.timeline-university {
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-/* ============ RESPONSIVE TIMELINE ============ */
-@media (max-width: 1024px) {
-    .timeline-items {
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
-    }
-
-    .timeline-item {
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .timeline-item-bottom {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin-top: 2rem;
-    }
-
-    .timeline-circle {
-        width: 110px;
-        height: 110px;
-    }
-
-    .timeline-popup {
-        position: relative;
-        transform: scale(0);
-        opacity: 0;
-        bottom: auto;
-        margin-top: 1rem;
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .timeline-popup.visible {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    .timeline-popup::after {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .timeline-container {
-        padding: 2rem 0.5rem 10rem 0.5rem;
-    }
-
-    .timeline-items {
-        gap: 2rem;
-    }
-
-    .timeline-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .timeline-year {
-        font-size: 1.1rem;
-    }
-
-    .timeline-degree {
-        font-size: 0.9rem;
-    }
-
-    .timeline-university {
-        font-size: 0.85rem;
-    }
-
-    .timeline-info {
-        padding: 0;
-    }
-}
-</style>
-
-<script>
-// Timeline Popup Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const timelineCircles = document.querySelectorAll('.timeline-circle');
-    
-    timelineCircles.forEach(circle => {
-        circle.addEventListener('mouseenter', function() {
-            const circleId = this.id;
-            const popupId = `popup-${circleId.split('-')[1]}`;
-            const popup = document.getElementById(popupId);
-            
-            if (popup) {
-                document.querySelectorAll('.timeline-popup').forEach(p => {
-                    p.classList.remove('visible');
-                    p.classList.add('hidden');
-                });
-                
-                popup.classList.remove('hidden');
-                popup.classList.add('visible');
-            }
-        });
-        
-        circle.addEventListener('mouseleave', function() {
-            const circleId = this.id;
-            const popupId = `popup-${circleId.split('-')[1]}`;
-            const popup = document.getElementById(popupId);
-            
-            if (popup) {
-                popup.classList.remove('visible');
-                popup.classList.add('hidden');
-            }
-        });
-
-        // Touch support for mobile
-        circle.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            const circleId = this.id;
-            const popupId = `popup-${circleId.split('-')[1]}`;
-            const popup = document.getElementById(popupId);
-            
-            if (popup) {
-                popup.classList.toggle('visible');
-                popup.classList.toggle('hidden');
-            }
-        });
-    });
-});
-</script>
     <!-- ============ PROFESSIONAL CERTIFICATIONS ============ -->
     <section class="certifications-section" id="certifications" aria-label="Professional Certifications">
         <div class="education-container">
@@ -929,5 +934,92 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Scripts -->
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    
+    <script>
+        // Update SVG viewBox on window resize for responsive design
+        function updateTimelineSvg() {
+            const container = document.getElementById('timelineSvgContainer');
+            const items = document.querySelectorAll('.timeline-circle');
+            
+            if (!container || items.length === 0) return;
+            
+            // Get positions of circles
+            const positions = Array.from(items).map(item => {
+                const rect = item.getBoundingClientRect();
+                return {
+                    x: rect.left + rect.width / 2,
+                    y: rect.top + rect.height / 2
+                };
+            });
+            
+            // Only update on desktop view
+            if (window.innerWidth > 1024) {
+                const containerRect = container.getBoundingClientRect();
+                const svg = container.querySelector('svg');
+                
+                if (svg && positions.length === 4) {
+                    // Relative positions within container
+                    const relativePositions = positions.map(pos => ({
+                        x: pos.x - containerRect.left,
+                        y: pos.y - containerRect.top
+                    }));
+                    
+                    // Update paths dynamically if needed
+                    // For now, keep static SVG paths
+                }
+            }
+        }
+
+        // Timeline Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineCircles = document.querySelectorAll('.timeline-circle');
+            
+            timelineCircles.forEach(circle => {
+                circle.addEventListener('mouseenter', function() {
+                    const circleId = this.id;
+                    const popupId = `popup-${circleId.split('-')[1]}`;
+                    const popup = document.getElementById(popupId);
+                    
+                    if (popup) {
+                        document.querySelectorAll('.timeline-popup').forEach(p => {
+                            p.classList.remove('visible');
+                            p.classList.add('hidden');
+                        });
+                        
+                        popup.classList.remove('hidden');
+                        popup.classList.add('visible');
+                    }
+                });
+                
+                circle.addEventListener('mouseleave', function() {
+                    const circleId = this.id;
+                    const popupId = `popup-${circleId.split('-')[1]}`;
+                    const popup = document.getElementById(popupId);
+                    
+                    if (popup) {
+                        popup.classList.remove('visible');
+                        popup.classList.add('hidden');
+                    }
+                });
+
+                // Touch support for mobile
+                circle.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    const circleId = this.id;
+                    const popupId = `popup-${circleId.split('-')[1]}`;
+                    const popup = document.getElementById(popupId);
+                    
+                    if (popup) {
+                        popup.classList.toggle('visible');
+                        popup.classList.toggle('hidden');
+                    }
+                });
+            });
+            
+            // Update SVG on resize
+            window.addEventListener('resize', updateTimelineSvg);
+            updateTimelineSvg();
+        });
+    </script>
 </body>
 </html>
