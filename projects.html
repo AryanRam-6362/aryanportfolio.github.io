@@ -198,6 +198,7 @@
         .project-image {
             position: relative;
             z-index: 1;
+            overflow: hidden;
         }
 
         .project-image img {
@@ -205,12 +206,26 @@
             height: 350px;
             object-fit: cover;
             border-radius: 12px;
-            transition: transform 0.4s ease;
+            transition: opacity 0.6s ease, transform 0.4s ease;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            display: block;
         }
 
-        .project-card:hover .project-image img {
+        .project-image:hover img {
             transform: scale(1.05);
+        }
+
+        .carousel-image {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .carousel-image.active {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
         }
 
         .project-cta {
@@ -376,16 +391,20 @@
                         <div class="project-number">Project 01</div>
                         <h2>Sustainable Materials Innovation</h2>
                         <p class="project-description">
-                            Developed eco-friendly composite materials that significantly reduce carbon footprint while maintaining superior structural integrity. This project involved extensive research into bio-based polymers and testing with industrial partners.
+                            Developed viable commercial product prototypes utilizing organic byproducts. Formulated specialized blends of areca fiber, bagasse, and tea leaf powder to manufacture structurally sound disposable plates, eco-friendly pillow fillings, and moisture-resistant barrier coatings.
                         </p>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-label">Carbon Impact</div>
-                                <div class="metric-value">40% Reduction</div>
+                                <div class="metric-label">COMMERCIAL OUTPUTS</div>
+                                <div class="metric-value">4 Viable Prototypes</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-label">Project Duration</div>
-                                <div class="metric-value">18 Months</div>
+                                <div class="metric-label">CORE BIO-MATERIALS</div>
+                                <div class="metric-value">Areca, Bagasse, Tea</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">PRIMARY APPLICATION</div>
+                                <div class="metric-value">Packaging & Fill</div>
                             </div>
                         </div>
                         <div class="project-tags">
@@ -394,20 +413,15 @@
                             <span class="project-tag">Innovation</span>
                             <span class="project-tag">Testing</span>
                         </div>
-                        <a href="#project-1" class="btn btn-primary project-cta">
-                            Explore Project
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        
                     </div>
-                    <div class="project-image">
-                        <img 
-                            src="./images/projects/project-1.jpg" 
-                            alt="Sustainable Materials Innovation Project"
-                            loading="lazy"
-                            width="500"
-                            height="350">
+                    <div class="project-image carousel" data-carousel>
+                        <img class="carousel-image active" src="./images/projects/IMG20231101163708.jpg" alt="Sustainable Materials Innovation Project">
+                        <img class="carousel-image" src="./images/projects/IMG20231101163753.jpg" alt="Sustainable Materials Innovation Project 2">
+                        <img class="carousel-image" src="./images/projects/IMG20231101173418.jpg" alt="Sustainable Materials Innovation Project 3">
+                        <img class="carousel-image" src="./images/projects/IMG20231101175328.jpg" alt="Sustainable Materials Innovation Project 4">
+                        <img class="carousel-image" src="./images/projects/Sus mat.jpg" alt="Sustainable Materials Innovation Project 5">
+                        <img class="carousel-image" src="./images/projects/IMG20231101174057.jpg" alt="Sustainable Materials Innovation Project 6">
                     </div>
                 </article>
 
@@ -417,38 +431,32 @@
                         <div class="project-number">Project 02</div>
                         <h2>AI-Driven Quality Assurance System</h2>
                         <p class="project-description">
-                            Implemented machine learning algorithms for real-time defect detection, achieving 99.2% accuracy and reducing quality failures by 65%. Automated inspection process saved 2000+ hours annually through intelligent computer vision systems.
+                            Designed an automated inspection workcell using an ABB GoFa collaborative robot and a high-resolution 3D camera to identify micro-scratches and dust on luxury watch dials. Leveraging the unsupervised PatchCore anomaly detection algorithm, this computer vision system achieved a 10 to 15-second cycle time per watch with zero false positives on flat dials.
                         </p>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-label">Detection Accuracy</div>
-                                <div class="metric-value">99.2%</div>
+                                <div class="metric-label">CYCLE TIME:</div>
+                                <div class="metric-value">10~15 Seconds</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-label">Annual Savings</div>
-                                <div class="metric-value">2000+ Hours</div>
+                                <div class="metric-label">PEAK F1-SCORE:</div>
+                                <div class="metric-value">0.94</div>
                             </div>
                         </div>
                         <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">ANOMALY DETECTION</span>
                             <span class="project-tag">Computer Vision</span>
                             <span class="project-tag">Quality Control</span>
-                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">ROBOTICS</span>
                         </div>
-                        <a href="#project-2" class="btn btn-primary project-cta">
-                            Explore Project
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        
                     </div>
-                    <div class="project-image">
-                        <img 
-                            src="./images/projects/project-2.jpg" 
-                            alt="AI-Driven Quality Assurance System"
-                            loading="lazy"
-                            width="500"
-                            height="350">
+                    <div class="project-image carousel" data-carousel>
+                        <img class="carousel-image active" src="./images/projects/Gemini_Generated_Image_.png" alt="AI-Driven Quality Assurance System">
+                        <img class="carousel-image" src="./images/projects/20260304_122214.png" alt="AI-Driven Quality Assurance System 2">
+                        <img class="carousel-image" src="./images/projects/20260303_164439.png" alt="AI-Driven Quality Assurance System 3">
+                        <img class="carousel-image" src="./images/projects/Gemini_Generated_Image_u0tfeku0tfeku0tf.png" alt="AI-Driven Quality Assurance System 3">
+                        
                     </div>
                 </article>
 
@@ -458,38 +466,30 @@
                         <div class="project-number">Project 03</div>
                         <h2>Manufacturing Process Optimization</h2>
                         <p class="project-description">
-                            Restructured production workflows using lean six sigma methodologies. Reduced waste by 35%, cycle time by 28%, and increased throughput by 42% through systematic optimization and process reengineering.
+                            Building a real-time Computer Vision system to assess occupational health on the factory floor. This pipeline uses AI pose estimation to map 3D human biomechanics, calculating critical joint angles to automatically generate Rapid Upper Limb Assessment (RULA) risk scores.
                         </p>
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-label">Waste Reduction</div>
-                                <div class="metric-value">35%</div>
+                                <div class="metric-label">Heading Change to:</div>
+                                <div class="metric-value">33 (per worker)</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-label">Throughput Increase</div>
-                                <div class="metric-value">42%</div>
+                                <div class="metric-label">SCORE RANGE IDENTIFIED</div>
+                                <div class="metric-value">Action Levels 1-7</div>
                             </div>
                         </div>
                         <div class="project-tags">
-                            <span class="project-tag">Lean Six Sigma</span>
-                            <span class="project-tag">Process Engineering</span>
-                            <span class="project-tag">Optimization</span>
-                            <span class="project-tag">Manufacturing</span>
+                            <span class="project-tag">COMPUTER VISION</span>
+                            <span class="project-tag">POSE ESTIMATION</span>
+                            <span class="project-tag">OCCUPATIONAL HEALTH</span>
+                            <span class="project-tag">PYTHON</span>
                         </div>
-                        <a href="#project-3" class="btn btn-primary project-cta">
-                            Explore Project
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        
                     </div>
-                    <div class="project-image">
-                        <img 
-                            src="./images/projects/project-3.jpg" 
-                            alt="Manufacturing Process Optimization"
-                            loading="lazy"
-                            width="500"
-                            height="350">
+                    <div class="project-image carousel" data-carousel>
+                        <img class="carousel-image active" src="./images/projects/Gemini_Generated_Image_r6gmcyr6gmcyr6gm-2.png" alt="Manufacturing Process Optimization">
+                        
+                        
                     </div>
                 </article>
             </div>
@@ -544,12 +544,12 @@
                     <div class="social-icons" aria-label="Social Media Links">
                         <a href="https://linkedin.com/in/aryan-ram-8b5a2b1a9/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/>
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.786 0-.997.784-1.786 1.75-1.786s1.75.79 1.75 1.786c0 .996-.784 1.786-1.75 1.786zm13.5 12.268h-3v-5.604c0-1.337-.027-3.059-1.865-3.059-1.868 0-2.153 1.459-2.153 2.966v5.697h-3v-11h2.881v1.507h.041c.401-.761 1.379-1.562 2.839-1.562 3.036 0 3.594 2.001 3.594 4.604v6.451z"/>
                             </svg>
                         </a>
                         <a href="https://github.com/aryanram-6362" class="social-icon" title="GitHub - Projects" aria-label="GitHub Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 016.003 0c2.293-1.552 3.301-1.23 3.301-1.23.653 1.653.241 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.804 5.625-5.475 5.921.431.372.816 1.103.816 2.222v3.293c0 .319.192.694.801.576C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                             </svg>
                         </a>
                         <a href="mailto:iamaryanram@gmail.com" class="social-icon" title="Send Email" aria-label="Email Contact">
@@ -560,7 +560,7 @@
                         </a>
                         <a href="https://twitter.com/aryanram" class="social-icon" title="Twitter - Updates" aria-label="Twitter Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 10.5.5 12-4.5a4.5 4.5 0 00.5-4.5z"/>
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 10.5.5 12-2.73.88 0-1.45-4.54-1.45-4.54z"/>
                             </svg>
                         </a>
                     </div>
@@ -581,5 +581,21 @@
     <!-- Scripts -->
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+                const images = carousel.querySelectorAll('img');
+                if (images.length <= 1) return;
+
+                let current = 0;
+
+                setInterval(() => {
+                    images[current].classList.remove('active');
+                    current = (current + 1) % images.length;
+                    images[current].classList.add('active');
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
