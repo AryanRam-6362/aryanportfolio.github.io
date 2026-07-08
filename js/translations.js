@@ -758,14 +758,31 @@ function applyTranslations(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     
-    // Set active values on dropdown
-    const langSelect = document.getElementById('langSelect');
-    if (langSelect) {
-        langSelect.value = savedLang;
-        langSelect.addEventListener('change', (e) => {
-            applyTranslations(e.target.value);
+    // Set active class on corresponding button and attach click events
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        if (btn.getAttribute('data-lang') === savedLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = btn.getAttribute('data-lang');
+            
+            // Sync all selectors on the page (in case there are multiple, e.g. mobile vs desktop)
+            document.querySelectorAll('.lang-btn').forEach(b => {
+                if (b.getAttribute('data-lang') === selectedLang) {
+                    b.classList.add('active');
+                } else {
+                    b.classList.remove('active');
+                }
+            });
+            
+            applyTranslations(selectedLang);
         });
-    }
+    });
 
     applyTranslations(savedLang);
 });
