@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Achievements & Certifications - Aryan Ram | Mechanical & Quality Engineer">
+    <meta name="keywords" content="Achievements, Certifications, Lean Six Sigma, Machine Learning, CAD, FEA, Sustainable Manufacturing">
+    <meta name="author" content="Aryan Ram">
+    <meta name="theme-color" content="#0F1419">
+    <meta name="robots" content="index, follow">
+    
+    <title>Achievements | Aryan - Mechanical Engineer</title>
+    <link rel="canonical" href="https://aryanram-6362.github.io/aryanportfolio.github.io/achievements.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script src="js/translations.js" defer></script>
+    
+    <style>
+        /* Achievements Page Styling */
+        .page-hero {
+            background: linear-gradient(135deg, #0F1419 0%, #1A2332 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .achievements-section {
+            padding: 6rem 2rem;
+            background-color: var(--bg-white);
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            background-color: var(--bg-light);
+            border: 2px solid transparent;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            background-color: var(--bg-white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.25);
+            border-color: var(--primary-color);
+        }
+
+        /* Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .certification-card {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .certification-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            border-color: var(--primary-color);
+        }
+
+        .certification-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover class .certification-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .certification-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .certification-issuer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .certification-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: auto;
+        }
+
+        /* Animations */
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .page-hero p {
+                font-size: 1rem;
+            }
+            .filter-btn {
+                padding: 0.5rem 1.25rem;
+                font-size: 0.85rem;
+            }
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============ HEADER & NAVIGATION ============ -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main Navigation">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo" title="Aryan Ram - Home">ARYAN<span>.</span></a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="index.html#expertise" class="nav-link" data-i18n="nav-expertise">Expertise</a></li>
+                    <li><a href="projects.html" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="education.html" class="nav-link" data-i18n="nav-education">Education</a></li>
+                    <li><a href="experience.html" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="achievements.html" class="nav-link active" data-i18n="nav-achievements">Achievements</a></li>
+                    <li><a href="index.html#footer" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+                </ul>
+                
+                <div class="lang-selector-wrapper">
+                    <select id="langSelect" aria-label="Select Language" class="lang-select">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
+                
+                <div class="header-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <!-- ============ HERO SECTION ============ -->
+    <section class="page-hero">
+        <h1 data-i18n="ach-hero-title">Achievements & Certifications</h1>
+        <p data-i18n="ach-hero-desc">A verification of professional skills, continuous learning initiatives, and industry qualifications that validate my engineering capability.</p>
+    </section>
+
+    <!-- ============ CERTIFICATIONS SECTION ============ -->
+    <section class="achievements-section" aria-label="Certifications Showcase">
+        <div class="achievements-container">
+            
+            <!-- Category Filters -->
+            <div class="filter-controls">
+                <button class="filter-btn active" onclick="filterCategory('all', event)" data-i18n="ach-filter-all">All Credentials</button>
+                <button class="filter-btn" onclick="filterCategory('ai-automation', event)" data-i18n="ach-filter-ai">AI & Analytics</button>
+                <button class="filter-btn" onclick="filterCategory('mechanical-cad', event)" data-i18n="ach-filter-mech">Mechanical & CAD</button>
+                <button class="filter-btn" onclick="filterCategory('manufacturing-iot', event)" data-i18n="ach-filter-mfg">Manufacturing & IoT</button>
+            </div>
+
+            <!-- Grid of Cards -->
+            <div class="achievements-grid">
+                
+                <!-- Card 1 -->
+                <div class="certification-card" data-category="mechanical-cad" role="article">
+                    <div>
+                        <div class="certification-icon">⚙️</div>
+                        <h4 data-i18n="ach-card-title-1">Lean Six Sigma Black Belt</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-1">American Society for Quality (ASQ)</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-1">Issued: 2022 | Valid</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="certification-card" data-category="ai-automation" role="article">
+                    <div>
+                        <div class="certification-icon">🤖</div>
+                        <h4 data-i18n="ach-card-title-2">Machine Learning Specialization</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-2">Coursera | Andrew Ng</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-2">Issued: 2023 | Valid</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="certification-card" data-category="ai-automation" role="article">
+                    <div>
+                        <div class="certification-icon">📊</div>
+                        <h4 data-i18n="ach-card-title-3">Advanced Data Analytics</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-3">Microsoft | Professional Certificate</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-3">Issued: 2023 | Valid</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="certification-card" data-category="mechanical-cad" role="article">
+                    <div>
+                        <div class="certification-icon">🏗️</div>
+                        <h4 data-i18n="ach-card-title-4">CAD & FEA Professional</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-4">Autodesk & ANSYS Certified</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-4">Issued: 2021 | Valid</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="certification-card" data-category="manufacturing-iot" role="article">
+                    <div>
+                        <div class="certification-icon">🌱</div>
+                        <h4 data-i18n="ach-card-title-5">Sustainable Manufacturing</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-5">International Association of Sustainable Manufacturing</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-5">Issued: 2022 | Valid</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="certification-card" data-category="manufacturing-iot" role="article">
+                    <div>
+                        <div class="certification-icon">🔧</div>
+                        <h4 data-i18n="ach-card-title-6">Industrial IoT & Industry 4.0</h4>
+                        <p class="certification-issuer" data-i18n="ach-card-inst-6">Professional Development Institute</p>
+                    </div>
+                    <p class="certification-date" data-i18n="ach-card-date-6">Issued: 2023 | Valid</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer role="contentinfo" id="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h3 data-i18n="footer-title">Aryan Ram</h3>
+                    <p data-i18n="footer-subtitle">Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
+                    <p class="footer-email"><strong>Email:</strong> <a href="mailto:iamaryanram@gmail.com">iamaryanram@gmail.com</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer-nav-title-1">Quick Navigation</h4>
+                    <nav aria-label="Footer Quick Links">
+                        <ul>
+                            <li><a href="index.html#hero">Home</a></li>
+                            <li><a href="index.html#expertise">Expertise</a></li>
+                            <li><a href="index.html#featured-projects">Featured Work</a></li>
+                            <li><a href="projects.html">All Projects</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer-nav-title-2">Portfolio</h4>
+                    <nav aria-label="Footer Portfolio Links">
+                        <ul>
+                            <li><a href="achievements.html">Achievements</a></li>
+                            <li><a href="experience.html">Experience</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="index.html#skills-section">Skills</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer-connect-title">Connect With Me</h4>
+                    <div class="social-icons" aria-label="Social Media Links">
+                        <a href="https://linkedin.com/in/aryan-ram-8b5a2b1a9/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.786 0-.997.784-1.786 1.75-1.786s1.75.79 1.75 1.786c0 .996-.784 1.786-1.75 1.786zm13.5 12.268h-3v-5.604c0-1.337-.027-3.059-1.865-3.059-1.868 0-2.153 1.459-2.153 2.966v5.697h-3v-11h2.881v1.507h.041c.401-.761 1.379-1.562 2.839-1.562 3.036 0 3.594 2.001 3.594 4.604v6.451z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/aryanram-6362" class="social-icon" title="GitHub - Projects" aria-label="GitHub Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 016.003 0c2.293-1.552 3.301-1.23 3.301-1.23.653 1.653.241 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.804 5.625-5.475 5.921.431.372.816 1.103.816 2.222v3.293c0 .319.192.694.801.576C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:iamaryanram@gmail.com" class="social-icon" title="Send Email" aria-label="Email Contact">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/aryanram" class="social-icon" title="Twitter - Updates" aria-label="Twitter Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 10.5.5 12-2.73.88 0-1.45-4.54-1.45-4.54z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
+                <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    
+    <script>
+        function filterCategory(category, event) {
+            // Toggle active state of filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+
+            // Filter cards
+            document.querySelectorAll('.certification-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'scaleIn 0.4s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

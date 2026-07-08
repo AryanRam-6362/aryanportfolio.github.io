@@ -68,6 +68,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script src="js/translations.js" defer></script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
@@ -80,14 +81,23 @@
                 <a href="#hero" class="logo" title="Aryan Ram - Home">ARYAN<span>.</span></a>
                 
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero" class="nav-link active">Home</a></li>
-                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
-                    <li><a href="#featured-projects" class="nav-link">Projects</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="achievements.html" class="nav-link">Achievements</a></li>
-                    <li><a href="#footer" class="nav-link">Contact</a></li>
+                    <li><a href="#hero" class="nav-link active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#expertise" class="nav-link" data-i18n="nav-expertise">Expertise</a></li>
+                    <li><a href="#featured-projects" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="education.html" class="nav-link" data-i18n="nav-education">Education</a></li>
+                    <li><a href="experience.html" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="achievements.html" class="nav-link" data-i18n="nav-achievements">Achievements</a></li>
+                    <li><a href="#footer" class="nav-link" data-i18n="nav-contact">Contact</a></li>
                 </ul>
+                
+                <div class="lang-selector-wrapper">
+                    <select id="langSelect" aria-label="Select Language" class="lang-select">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
                 
                 <div class="header-controls">
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -100,24 +110,25 @@
         </nav>
     </header>
 
+    <main id="main-content">
     <!-- ============ HERO SECTION ============ -->
     <section class="hero" id="hero" aria-label="Hero Section - Welcome">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="gradient-text">Aryan</span></h1>
-                <p class="hero-tagline">Mechanical Engineer | Innovation Architect</p>
-                <p class="hero-intro">
+                <p class="hero-tagline" data-i18n="hero-tagline">Mechanical Engineer | Innovation Architect</p>
+                <p class="hero-intro" data-i18n="hero-intro">
                     I transform complex engineering challenges into elegant solutions. Specializing in sustainable materials development, manufacturing process optimization, and AI-driven quality assurance systems. With a proven track record of delivering measurable impact across leading organizations, I combine technical expertise with business acumen to drive innovation.
                 </p>
                 <div class="cta-buttons">
                     <a href="#featured-projects" class="btn btn-primary">
-                        <span>Explore My Work</span>
+                        <span data-i18n="hero-btn-portfolio">Explore My Work</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <a href="#footer" class="btn btn-secondary">
-                        <span>Get In Touch</span>
+                        <span data-i18n="hero-btn-contact">Get In Touch</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
@@ -140,7 +151,7 @@
     <!-- ============ EXPERTISE SECTION ============ -->
     <section class="expertise" id="expertise" aria-label="Areas of Expertise">
         <div class="expertise-container">
-            <h2 class="section-title">Core Expertise</h2>
+            <h2 class="section-title" data-i18n="sectitle-expertise">Core Expertise</h2>
             <div class="expertise-grid">
                 <div class="expertise-card" tabindex="0" role="article">
                     <div class="expertise-icon-wrapper">
@@ -152,8 +163,8 @@
                             height="80"
                             loading="lazy">
                     </div>
-                    <h3>Sustainable Materials</h3>
-                    <p>Designing eco-friendly composite materials with superior performance. Reducing environmental impact while maintaining structural integrity and production efficiency.</p>
+                    <h3 data-i18n="exp-title-1">Sustainable Materials</h3>
+                    <p data-i18n="exp-desc-1">Designing eco-friendly composite materials with superior performance. Reducing environmental impact while maintaining structural integrity and production efficiency.</p>
                     <ul class="expertise-tags" aria-label="Sustainable Materials Skills">
                         <li>Eco-Design</li>
                         <li>Material Science</li>
@@ -171,8 +182,8 @@
                             height="80"
                             loading="lazy">
                     </div>
-                    <h3>Manufacturing Optimization</h3>
-                    <p>Streamlining production workflows with lean methodologies. Implementing industry 4.0 solutions to reduce waste, improve throughput, and enhance product quality.</p>
+                    <h3 data-i18n="exp-title-2">Manufacturing Optimization</h3>
+                    <p data-i18n="exp-desc-2">Streamlining production workflows with lean methodologies. Implementing industry 4.0 solutions to reduce waste, improve throughput, and enhance product quality.</p>
                     <ul class="expertise-tags" aria-label="Manufacturing Skills">
                         <li>Lean Manufacturing</li>
                         <li>Process Optimization</li>
@@ -190,8 +201,8 @@
                             height="80"
                             loading="lazy">
                     </div>
-                    <h3>AI & Quality Engineering</h3>
-                    <p>Leveraging machine learning for predictive quality assurance. Real-time defect detection, process monitoring, and continuous improvement through intelligent automation.</p>
+                    <h3 data-i18n="exp-title-3">AI & Quality Engineering</h3>
+                    <p data-i18n="exp-desc-3">Leveraging machine learning for predictive quality assurance. Real-time defect detection, process monitoring, and continuous improvement through intelligent automation.</p>
                     <ul class="expertise-tags" aria-label="AI & Quality Skills">
                         <li>Machine Learning</li>
                         <li>Predictive Analytics</li>
@@ -209,8 +220,8 @@
                             height="80"
                             loading="lazy">
                     </div>
-                    <h3>Design Engineering</h3>
-                    <p>Creating innovative product designs with advanced CAD and FEA expertise. From concept to prototype, delivering manufacturable solutions with optimal performance.</p>
+                    <h3 data-i18n="exp-title-4">Design Engineering</h3>
+                    <p data-i18n="exp-desc-4">Creating innovative product designs with advanced CAD and FEA expertise. From concept to prototype, delivering manufacturable solutions with optimal performance.</p>
                     <ul class="expertise-tags" aria-label="Design Engineering Skills">
                         <li>CAD Design (CATIA, SolidWorks)</li>
                         <li>FEA Simulation</li>
@@ -225,7 +236,7 @@
     <!-- ============ FEATURED PROJECTS PREVIEW ============ -->
     <section class="featured-projects" id="featured-projects" aria-label="Featured Projects">
         <div class="featured-projects-container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" data-i18n="sectitle-featured">Featured Projects</h2>
             <div class="featured-grid">
                 <article class="featured-card" role="article">
                     <div class="featured-image">
@@ -239,8 +250,8 @@
                         <span class="project-category">Materials Science</span>
                     </div>
                     <div class="featured-content">
-                        <h3>Sustainable Materials Innovation</h3>
-                        <p>Transformed raw agricultural waste—including areca nut, bagasse, and spent tea leaves—into viable commercial prototypes, ranging from durable molded compostable plates to specialized water-resistant barrier coatings.</p>
+                        <h3 data-i18n="feat-title-1">Sustainable Materials Innovation</h3>
+                        <p data-i18n="feat-desc-1">Transformed raw agricultural waste—including areca nut, bagasse, and spent tea leaves—into viable commercial prototypes, ranging from durable molded compostable plates to specialized water-resistant barrier coatings.</p>
                         <div class="project-stats">
                             <span>🌱 3 Core Bio-Materials: Areca, Bagasse, Tea</span>
                             <span>📦 4 Product Prototypes: Plates, Paper, Coating, Fill</span>
@@ -262,8 +273,8 @@
                         <span class="project-category">AI & Automation</span>
                     </div>
                     <div class="featured-content">
-                        <h3>AI-Driven Quality Systems</h3>
-                        <p>Deployed a collaborative robot integrated with a 3D camera to automate precision quality control. Utilizing Anomalib for unsupervised anomaly detection, the system dynamically captures images to train and identify microscopic dust and micro-scratches. The solution delivered 99.2% accuracy, cutting quality failures by 65% and saving 2000+ manual hours a year.</p>
+                        <h3 data-i18n="feat-title-2">AI-Driven Quality Systems</h3>
+                        <p data-i18n="feat-desc-2">Deployed a collaborative robot integrated with a 3D camera to automate precision quality control. Utilizing Anomalib for unsupervised anomaly detection, the system dynamically captures images to train and identify microscopic dust and micro-scratches. The solution delivered 99.2% accuracy, cutting quality failures by 65% and saving 2000+ manual hours a year.</p>
                         <div class="project-stats">
                             <span>🎯 99.2% Accuracy</span>
                             <span>📈 65% Quality Improvement</span>
@@ -285,8 +296,8 @@
                         <span class="project-category">Process Engineering</span>
                     </div>
                     <div class="featured-content">
-                        <h3>Manufacturing Optimization (Work In Progress)</h3>
-                        <p>Developing a real-time Computer Vision pipeline to evaluate factory workstation ergonomics. This system utilizes AI pose estimation to track 3D human landmarks, calculate critical joint angles, and automatically generate RULA risk scores to improve occupational health..</p>
+                        <h3 data-i18n="feat-title-3">Manufacturing Process Optimization</h3>
+                        <p data-i18n="feat-desc-3">Developing a real-time Computer Vision pipeline to evaluate factory workstation ergonomics. This system utilizes AI pose estimation to track 3D human landmarks, calculate critical joint angles, and automatically generate RULA risk scores to improve occupational health.</p>
                         <div class="project-stats">
                             <span>📷 Real-Time Pose Estimation</span>
                             <span>📐 Biomechanical Angle Mapping</span>
@@ -297,7 +308,7 @@
                 </article>
             </div>
             <div class="view-all-projects">
-                <a href="projects.html" class="btn btn-primary">View All Projects & Case Studies →</a>
+                <a href="projects.html" class="btn btn-primary" data-i18n="feat-btn-all">View All Projects & Case Studies →</a>
             </div>
         </div>
     </section>
@@ -305,83 +316,83 @@
     <!-- ============ PORTFOLIO NAVIGATION ============ -->
     <section class="portfolio-nav" aria-label="Portfolio Sections Navigation">
         <div class="portfolio-nav-container">
-            <h2 class="section-title">Explore My Portfolio</h2>
+            <h2 class="section-title" data-i18n="sectitle-explore">Explore My Portfolio</h2>
             <div class="nav-cards">
                 <a href="projects.html" class="nav-card" role="article">
-                    <h3><span class="nav-icon">💼</span> Detailed Projects</h3>
-                    <p>In-depth case studies showcasing engineering challenges, methodologies, technical solutions, and quantifiable business impact from diverse industries.</p>
+                    <h3 data-i18n="explore-title-1"><span class="nav-icon">💼</span> Detailed Projects</h3>
+                    <p data-i18n="explore-desc-1">In-depth case studies showcasing engineering challenges, methodologies, technical solutions, and quantifiable business impact from diverse industries.</p>
                     <span class="nav-arrow" aria-hidden="true">→</span>
                 </a>
                 <a href="achievements.html" class="nav-card" role="article">
-                    <h3><span class="nav-icon">🏆</span> Achievements</h3>
-                    <p>Industry certifications, publications, awards, and recognition that validate expertise and commitment to engineering excellence and innovation.</p>
+                    <h3 data-i18n="explore-title-2"><span class="nav-icon">🏆</span> Achievements</h3>
+                    <p data-i18n="explore-desc-2">Industry certifications, publications, awards, and recognition that validate expertise and commitment to engineering excellence and innovation.</p>
                     <span class="nav-arrow" aria-hidden="true">→</span>
                 </a>
                 <a href="experience.html" class="nav-card" role="article">
-                    <h3><span class="nav-icon">👔</span> Experience</h3>
-                    <p>Professional timeline with key roles, responsibilities, and impactful contributions across leading companies in the mechanical engineering and manufacturing sectors.</p>
+                    <h3 data-i18n="explore-title-3"><span class="nav-icon">👔</span> Experience</h3>
+                    <p data-i18n="explore-desc-3">Professional timeline with key roles, responsibilities, and impactful contributions across leading companies in the mechanical engineering and manufacturing sectors.</p>
                     <span class="nav-arrow" aria-hidden="true">→</span>
                 </a>
                 <a href="education.html" class="nav-card" role="article">
-                    <h3><span class="nav-icon">🎓</span> Educational Qualifications</h3>
-                    <p>Academic credentials, certifications, specialized training programs, and continuous learning initiatives that demonstrate expertise and commitment to professional development in mechanical engineering.</p>
+                    <h3 data-i18n="explore-title-4"><span class="nav-icon">🎓</span> Educational Qualifications</h3>
+                    <p data-i18n="explore-desc-4">Academic credentials, certifications, specialized training programs, and continuous learning initiatives that demonstrate expertise and commitment to professional development in mechanical engineering.</p>
                     <span class="nav-arrow" aria-hidden="true">→</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ============ TESTIMONIALS SECTION ============ --
-    <section class="testimonials" aria-label="Client Testimonials">
+    <!-- ============ TESTIMONIALS SECTION ============ -->
+    <section class="testimonials" id="testimonials" aria-label="Client Testimonials">
         <div class="testimonials-container">
-            <h2 class="section-title">Client Testimonials</h2>
+            <h2 class="section-title" data-i18n="sectitle-testimonials">Professional References</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card" role="article">
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                    <p class="testimonial-text">"Aryan's innovative approach to sustainable materials transformation of our production process. His technical depth and professional execution delivered exceptional results ahead of schedule."</p>
+                    <p class="testimonial-text" data-i18n="test-quote-1">"Aryan's innovative approach to sustainable materials transformed our production process. His technical depth and professional execution delivered exceptional results ahead of schedule."</p>
                     <div class="testimonial-author">
-                        <img src="./images/testimonials/john-smith.jpg" alt="John Smith" class="author-avatar" width="50" height="50" style="border-radius: 50%; object-fit: cover;">
+                        <div class="author-avatar-initials" aria-hidden="true">JS</div>
                         <div>
                             <div class="author-name">John Smith</div>
-                            <div class="author-title">Manufacturing Director, Tech Corp</div>
+                            <div class="author-title" data-i18n="test-title-1">Manufacturing Director, Tech Corp</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card" role="article">
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                    <p class="testimonial-text">"The AI quality system implementation exceeded expectations. 99.2% accuracy with seamless integration. Aryan's technical expertise and project management were instrumental to our success."</p>
+                    <p class="testimonial-text" data-i18n="test-quote-2">"The AI quality system implementation exceeded expectations. 99.2% accuracy with seamless integration. Aryan's technical expertise and project management were instrumental to our success."</p>
                     <div class="testimonial-author">
-                        <img src="./images/testimonials/sarah-johnson.jpg" alt="Sarah Johnson" class="author-avatar" width="50" height="50" style="border-radius: 50%; object-fit: cover;">
+                        <div class="author-avatar-initials" aria-hidden="true">SJ</div>
                         <div>
                             <div class="author-name">Sarah Johnson</div>
-                            <div class="author-title">Operations Manager, Innovation Labs</div>
+                            <div class="author-title" data-i18n="test-title-2">Operations Manager, Innovation Labs</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card" role="article">
                     <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                    <p class="testimonial-text">"Exceptional engineer who combines technical depth with strategic business thinking. Aryan brought valuable perspectives that solved complex manufacturing challenges elegantly."</p>
+                    <p class="testimonial-text" data-i18n="test-quote-3">"Exceptional engineer who combines technical depth with strategic business thinking. Aryan brought valuable perspectives that solved complex manufacturing challenges elegantly."</p>
                     <div class="testimonial-author">
-                        <img src="./images/testimonials/michael-chen.jpg" alt="Michael Chen" class="author-avatar" width="50" height="50" style="border-radius: 50%; object-fit: cover;">
+                        <div class="author-avatar-initials" aria-hidden="true">MC</div>
                         <div>
                             <div class="author-name">Michael Chen</div>
-                            <div class="author-title">CEO, Advanced Manufacturing Solutions</div>
+                            <div class="author-title" data-i18n="test-title-3">CEO, Advanced Manufacturing Solutions</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>>
+    </section>
 
     <!-- ============ SKILLS SECTION ============ -->
-    <section class="skills-section" aria-label="Technical Skills">
+    <section class="skills-section" id="skills-section" aria-label="Technical Skills">
         <div class="skills-container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-i18n="sectitle-skills">Technical Skills Matrix</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>CAD & Simulation</h3>
+                    <h3 data-i18n="skill-cat-1">CAD & Simulation</h3>
                     <div class="skill-tags">
                         <span>CATIA V6</span>
                         <span>SolidWorks</span>
@@ -392,7 +403,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Manufacturing & Processes</h3>
+                    <h3 data-i18n="skill-cat-2">Manufacturing & Processes</h3>
                     <div class="skill-tags">
                         <span>Lean Six Sigma</span>
                         <span>Process Optimization</span>
@@ -403,7 +414,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>AI & Data Analytics</h3>
+                    <h3 data-i18n="skill-cat-3">AI & Data Analytics</h3>
                     <div class="skill-tags">
                         <span>Python</span>
                         <span>Machine Learning</span>
@@ -414,7 +425,7 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Materials & Testing</h3>
+                    <h3 data-i18n="skill-cat-4">Materials & Testing</h3>
                     <div class="skill-tags">
                         <span>Material Science</span>
                         <span>Testing Protocols</span>
@@ -436,19 +447,20 @@
             <a href="#footer" class="btn btn-primary btn-large">Get In Touch →</a>
         </div>
     </section>
+    </main>
 
     <!-- ============ FOOTER ============ -->
     <footer role="contentinfo" id="footer">
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-section">
-                    <h3>Aryan Ram</h3>
-                    <p>Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
+                    <h3 data-i18n="footer-title">Aryan Ram</h3>
+                    <p data-i18n="footer-subtitle">Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
                     <p class="footer-email"><strong>Email:</strong> <a href="mailto:iamaryanram@gmail.com">iamaryanram@gmail.com</a></p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Quick Navigation</h4>
+                    <h4 data-i18n="footer-nav-title-1">Quick Navigation</h4>
                     <nav aria-label="Footer Quick Links">
                         <ul>
                             <li><a href="#hero">Home</a></li>
@@ -460,7 +472,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Portfolio</h4>
+                    <h4 data-i18n="footer-nav-title-2">Portfolio</h4>
                     <nav aria-label="Footer Portfolio Links">
                         <ul>
                             <li><a href="achievements.html">Achievements</a></li>
@@ -472,7 +484,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Connect With Me</h4>
+                    <h4 data-i18n="footer-connect-title">Connect With Me</h4>
                     <div class="social-icons" aria-label="Social Media Links">
                         <a href="www.linkedin.com/in/aryanramachandran/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -500,17 +512,12 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
-                <p>Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
-                <p style="font-size: 11px; margin-top: 10px; color: #999;">Last Updated: March 2026</p>
+                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
+                <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: March 2026</p>
             </div>
         </div>
     </footer>
-
-    <!-- Main Content ID for Skip Link -->
-    <div id="main-content" style="display: none;"></div>
-    <div id="skills-section"></div>
-    <div id="testimonials"></div>
 
     <!-- Scripts -->
     <script src="js/animations.js" defer></script>

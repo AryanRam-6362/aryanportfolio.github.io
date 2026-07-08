@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Experience - Aryan Ram | Mechanical & Automation Engineer">
+    <meta name="keywords" content="Professional Experience, Engineering Roles, Sustainable Materials, AI Automation, Robotics, R&D">
+    <meta name="author" content="Aryan Ram">
+    <meta name="theme-color" content="#0F1419">
+    <meta name="robots" content="index, follow">
+    
+    <title>Experience | Aryan - Mechanical Engineer</title>
+    <link rel="canonical" href="https://aryanram-6362.github.io/aryanportfolio.github.io/experience.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script src="js/translations.js" defer></script>
+    
+    <style>
+        /* Experience Timeline Page Styling */
+        .page-hero {
+            background: linear-gradient(135deg, #0F1419 0%, #1A2332 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .experience-section {
+            padding: 6rem 2rem;
+            background-color: var(--bg-white);
+            position: relative;
+        }
+
+        .experience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Vertical Spine line */
+        .vertical-spine {
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color) 0%, rgba(0, 217, 255, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-node {
+            display: grid;
+            grid-template-columns: 1fr 120px 1fr;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Central Node Point */
+        .node-dot-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .node-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+
+        .experience-node:hover .node-dot {
+            transform: scale(1.3);
+            background-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 1);
+        }
+
+        /* Date side */
+        .node-date {
+            text-align: right;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            padding: 0 2rem;
+        }
+
+        .experience-node:hover .node-date {
+            color: var(--text-dark);
+        }
+
+        .experience-node:nth-child(even) .node-date {
+            text-align: left;
+            grid-column: 3;
+        }
+
+        /* Content Card Side */
+        .node-card-wrapper {
+            padding: 0 2rem;
+        }
+
+        .experience-node:nth-child(even) .node-card-wrapper {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .experience-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.04) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .experience-card:hover::before {
+            opacity: 1;
+        }
+
+        .experience-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .experience-brief {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .expandable-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 0;
+        }
+
+        .experience-card.expanded .expandable-details {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .detail-item {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .detail-item strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .click-prompt {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Responsive timeline */
+        @media (max-width: 768px) {
+            .vertical-spine {
+                left: 20px;
+                transform: none;
+            }
+
+            .experience-node {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .node-dot-wrapper {
+                position: absolute;
+                left: -12px;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                grid-column: auto;
+            }
+
+            .node-dot {
+                width: 20px;
+                height: 20px;
+            }
+
+            .node-date {
+                text-align: left !important;
+                padding-left: 55px;
+                padding-right: 0;
+                grid-column: auto !important;
+                font-size: 1.1rem;
+            }
+
+            .node-card-wrapper {
+                padding-left: 55px;
+                padding-right: 0;
+                grid-column: auto !important;
+                grid-row: auto !important;
+            }
+
+            .experience-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============ HEADER & NAVIGATION ============ -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main Navigation">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo" title="Aryan Ram - Home">ARYAN<span>.</span></a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="index.html#expertise" class="nav-link" data-i18n="nav-expertise">Expertise</a></li>
+                    <li><a href="projects.html" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="education.html" class="nav-link" data-i18n="nav-education">Education</a></li>
+                    <li><a href="experience.html" class="nav-link active" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="achievements.html" class="nav-link" data-i18n="nav-achievements">Achievements</a></li>
+                    <li><a href="index.html#footer" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+                </ul>
+                
+                <div class="lang-selector-wrapper">
+                    <select id="langSelect" aria-label="Select Language" class="lang-select">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
+                
+                <div class="header-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <!-- ============ HERO SECTION ============ -->
+    <section class="page-hero">
+        <h1 data-i18n="exp-hero-title">Professional Experience</h1>
+        <p data-i18n="exp-hero-desc">A history of engineering contributions, combining technical depth in materials science, AI systems integration, and process engineering to deliver high-quality, sustainable solutions.</p>
+    </section>
+
+    <!-- ============ TIMELINE SECTION ============ -->
+    <section class="experience-section" aria-label="Academic and Professional Experience">
+        <div class="experience-container">
+            <div class="vertical-spine"></div>
+            
+            <div class="experience-timeline">
+                
+                <!-- Node 1 -->
+                <div class="experience-node">
+                    <div class="node-date" data-i18n="exp-node-yr-1">2024 - Present</div>
+                    <div class="node-dot-wrapper">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="node-card-wrapper">
+                        <div class="experience-card" onclick="this.classList.toggle('expanded')">
+                            <h3 data-i18n="exp-node-title-1">Digital Manufacturing Systems Engineer</h3>
+                            <div class="experience-company" data-i18n="exp-node-comp-1">Academic R&D | UCD & SUPSI Collaboration</div>
+                            <p class="experience-brief" data-i18n="exp-node-brief-1">Developing dynamic Computer Vision pipelines for real-time workstation safety and ergonomics evaluation on manufacturing floors.</p>
+                            
+                            <div class="expandable-details">
+                                <div class="detail-item"><strong>Core Project:</strong> <span data-i18n="exp-node-det-1-1">ErgoPose (Real-time Biomechanics Monitor).</span></div>
+                                <div class="detail-item"><strong>Methodology:</strong> <span data-i18n="exp-node-det-1-2">Deployed 3D human landmark tracking utilizing advanced pose estimation models to calculate joint flexes and biomechanical angles.</span></div>
+                                <div class="detail-item"><strong>Business Impact:</strong> <span data-i18n="exp-node-det-1-3">Implemented automated Rapid Upper Limb Assessment (RULA) scoring, eliminating the need for manual workstation ergonomics assessments.</span></div>
+                                <div class="detail-item"><strong>Tech Stack:</strong> <span data-i18n="exp-node-det-1-4">Python, Computer Vision, MediaPipe, OpenCV, Matplotlib.</span></div>
+                            </div>
+                            <span class="click-prompt" data-i18n="exp-click-prompt">Click to Toggle Details</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 2 -->
+                <div class="experience-node">
+                    <div class="node-date" data-i18n="exp-node-yr-2">2024</div>
+                    <div class="node-dot-wrapper">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="node-card-wrapper">
+                        <div class="experience-card" onclick="this.classList.toggle('expanded')">
+                            <h3 data-i18n="exp-node-title-2">AI & Quality Automation Systems Engineer</h3>
+                            <div class="experience-company" data-i18n="exp-node-comp-2">Advanced Manufacturing Project | Research Initiative</div>
+                            <p class="experience-brief" data-i18n="exp-node-brief-2">Led the deployment of a robotic-assisted optical inspection station for defect classification on high-precision luxury components.</p>
+                            
+                            <div class="expandable-details">
+                                <div class="detail-item"><strong>Technical Solution:</strong> <span data-i18n="exp-node-det-2-1">Integrated an ABB GoFa collaborative robot with a high-resolution 3D optical camera. Developed a deep learning inspection model based on unsupervised anomaly detection (PatchCore/Anomalib).</span></div>
+                                <div class="detail-item"><strong>Inspection Target:</strong> <span data-i18n="exp-node-det-2-2">Microscopic dust particles and micro-scratches on flat surfaces.</span></div>
+                                <div class="detail-item"><strong>Measurable Impact:</strong> <span data-i18n="exp-node-det-2-3">Achieved an overall cycle time of 10 to 15 seconds per component, delivering 99.2% classification accuracy and cutting manual inspection times by 65% (saving 2000+ hours annually).</span></div>
+                                <div class="detail-item"><strong>Tech Stack:</strong> <span data-i18n="exp-node-det-2-4">Deep Learning, PyTorch, Anomalib, ABB RobotStudio, 3D Imaging Systems.</span></div>
+                            </div>
+                            <span class="click-prompt" data-i18n="exp-click-prompt">Click to Toggle Details</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 3 -->
+                <div class="experience-node">
+                    <div class="node-date" data-i18n="exp-node-yr-3">2022 - 2024</div>
+                    <div class="node-dot-wrapper">
+                        <div class="node-dot"></div>
+                    </div>
+                    <div class="node-card-wrapper">
+                        <div class="experience-card" onclick="this.classList.toggle('expanded')">
+                            <h3 data-i18n="exp-node-title-3">Research & Development Engineer - Sustainable Materials</h3>
+                            <div class="experience-company" data-i18n="exp-node-comp-3">Green Engineering Systems | Bio-Composite Development</div>
+                            <p class="experience-brief" data-i18n="exp-node-brief-3">Developed viable commercial products and coatings derived from organic waste byproducts, replacing non-biodegradable polymers.</p>
+                            
+                            <div class="expandable-details">
+                                <div class="detail-item"><strong>Technical Achievement:</strong> <span data-i18n="exp-node-det-3-1">Formulated eco-composites using agricultural byproducts (areca fibers, bagasse, spent tea leaves). Engineered a highly hydrophobic bio-coating to serve as a moisture barrier.</span></div>
+                                <div class="detail-item"><strong>Prototypes Delivered:</strong> <span data-i18n="exp-node-det-3-2">Designed and tested 4 viable product categories including bio-degradable tableware, insulation filling, and compostable packaging films.</span></div>
+                                <div class="detail-item"><strong>Testing Standards:</strong> <span data-i18n="exp-node-det-3-3">Validated tensile properties, thermal decomposition, and water-absorption ratios according to ASTM testing standards.</span></div>
+                                <div class="detail-item"><strong>Tech Stack:</strong> <span data-i18n="exp-node-det-3-4">Bio-polymer blending, Tensile testing, Thermal Characterization (TGA), Lifecycle Assessment.</span></div>
+                            </div>
+                            <span class="click-prompt" data-i18n="exp-click-prompt">Click to Toggle Details</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer role="contentinfo" id="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h3 data-i18n="footer-title">Aryan Ram</h3>
+                    <p data-i18n="footer-subtitle">Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
+                    <p class="footer-email"><strong>Email:</strong> <a href="mailto:iamaryanram@gmail.com">iamaryanram@gmail.com</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer-nav-title-1">Quick Navigation</h4>
+                    <nav aria-label="Footer Quick Links">
+                        <ul>
+                            <li><a href="index.html#hero">Home</a></li>
+                            <li><a href="index.html#expertise">Expertise</a></li>
+                            <li><a href="index.html#featured-projects">Featured Work</a></li>
+                            <li><a href="projects.html">All Projects</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer-nav-title-2">Portfolio</h4>
+                    <nav aria-label="Footer Portfolio Links">
+                        <ul>
+                            <li><a href="achievements.html">Achievements</a></li>
+                            <li><a href="experience.html">Experience</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="index.html#skills-section">Skills</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer-connect-title">Connect With Me</h4>
+                    <div class="social-icons" aria-label="Social Media Links">
+                        <a href="https://linkedin.com/in/aryan-ram-8b5a2b1a9/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.786 0-.997.784-1.786 1.75-1.786s1.75.79 1.75 1.786c0 .996-.784 1.786-1.75 1.786zm13.5 12.268h-3v-5.604c0-1.337-.027-3.059-1.865-3.059-1.868 0-2.153 1.459-2.153 2.966v5.697h-3v-11h2.881v1.507h.041c.401-.761 1.379-1.562 2.839-1.562 3.036 0 3.594 2.001 3.594 4.604v6.451z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/aryanram-6362" class="social-icon" title="GitHub - Projects" aria-label="GitHub Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 016.003 0c2.293-1.552 3.301-1.23 3.301-1.23.653 1.653.241 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.804 5.625-5.475 5.921.431.372.816 1.103.816 2.222v3.293c0 .319.192.694.801.576C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:iamaryanram@gmail.com" class="social-icon" title="Send Email" aria-label="Email Contact">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/aryanram" class="social-icon" title="Twitter - Updates" aria-label="Twitter Profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 10.5.5 12-2.73.88 0-1.45-4.54-1.45-4.54z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
+                <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>

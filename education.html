@@ -26,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script src="js/translations.js" defer></script>
     
     <style>
         /* Education Page Specific Styles */
@@ -226,77 +227,75 @@
 
         .timeline-container {
             position: relative;
-            padding: 2rem 1rem 20rem 1rem;
+            padding: 2rem 1rem;
             width: 100%;
         }
 
-        .timeline-items {
-            position: relative;
-            z-index: 2;
-            width: 100%;
+        /* Timeline Row Layouts */
+        .timeline-row-vit {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            min-height: 500px;
+            position: relative;
+            width: 100%;
+            z-index: 2;
         }
 
-        /* SVG Connector Lines */
-        .timeline-svg-connector {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+        .vertical-connector-line {
+            width: 4px;
+            height: 5rem;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+            margin: 0 auto;
+            position: relative;
             z-index: 1;
         }
 
-        .timeline-svg-connector svg {
+        .timeline-row-double-master {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            column-gap: 3rem;
+            position: relative;
             width: 100%;
-            height: 100%;
+            z-index: 2;
         }
 
-        .connector-line {
-            fill: none;
-            stroke: #00D9FF;
-            stroke-width: 2;
-            stroke-dasharray: 8, 5;
-            opacity: 0.6;
-            animation: dashAnimation 20s linear infinite;
+        /* Horizontal connection line connecting UCD and SUPSI via EIT */
+        .timeline-row-double-master::before {
+            content: '';
+            position: absolute;
+            top: 65px; /* center of the 130px circles */
+            left: 15%;
+            right: 15%;
+            height: 4px;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 12px var(--primary-color);
+            z-index: 1;
         }
 
-        @keyframes dashAnimation {
+        /* Highlight EIT Manufacturing as the central connector hub */
+        .eit-node .timeline-circle {
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
+            animation: pulseHub 3s infinite alternate;
+            border-color: #FFFFFF;
+        }
+
+        @keyframes pulseHub {
             0% {
-                stroke-dashoffset: 0;
+                box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+                transform: scale(1);
             }
             100% {
-                stroke-dashoffset: 13;
+                box-shadow: 0 0 35px rgba(0, 217, 255, 0.9);
+                transform: scale(1.03);
             }
         }
 
-        .connector-arrow {
-            fill: #00D9FF;
-            opacity: 0.6;
-        }
-
-        .timeline-item {
+        .timeline-grid-item {
             position: relative;
-            text-align: center;
-            z-index: 2;
-            flex: 0 1 auto;
-        }
-
-        .timeline-item-top {
-            align-self: flex-start;
-        }
-
-        .timeline-item-bottom {
-            position: absolute;
-            bottom: -180px;
-            left: 75%; /* Pushed further right between UCD and SUPSI */
-            transform: translateX(-50%);
-            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         .timeline-circle-wrapper {
@@ -304,6 +303,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
+            cursor: pointer;
         }
 
         .timeline-circle {
@@ -315,23 +316,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
-            position: relative;
-            animation: circleAppear 0.8s ease-out;
+            z-index: 5;
             flex-shrink: 0;
-        }
-
-        @keyframes circleAppear {
-            from {
-                opacity: 0;
-                transform: scale(0);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
 
         .timeline-circle:hover {
@@ -345,162 +333,108 @@
             object-fit: contain;
             padding: 15px;
             filter: brightness(0) invert(1);
+            transition: transform 0.4s ease;
         }
 
-        /* ============ POPUP STYLES ============ */
-        .timeline-popup {
-            position: absolute;
-            bottom: 145px;
-            left: 50%;
-            transform: translateX(-50%) scale(0);
-            width: 300px;
-            background: var(--bg-white);
-            border: 2px solid var(--primary-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 12px 40px rgba(0, 217, 255, 0.25);
-            z-index: 10;
-            pointer-events: none;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            animation: none;
-            opacity: 0;
-            white-space: normal;
+        .timeline-circle:hover .university-logo {
+            transform: scale(1.05);
         }
 
-        .timeline-popup::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            width: 16px;
-            height: 16px;
-            background: var(--bg-white);
-            border: 2px solid var(--primary-color);
-            border-top: none;
-            border-left: none;
-        }
-
-        .timeline-popup.visible {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-            animation: popupAppear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            pointer-events: auto;
-        }
-
-        .timeline-popup.hidden {
-            display: none;
-        }
-
-        @keyframes popupAppear {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) scale(0.8) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) scale(1) translateY(0);
-            }
-        }
-
-        .popup-header {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .popup-detail {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-            text-align: left;
-        }
-
-        .popup-detail strong {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        /* ============ TIMELINE INFO STYLES ============ */
         .timeline-info {
             margin-top: 1.5rem;
-            padding: 0 1rem;
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
         }
 
         .timeline-year {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .timeline-degree {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.05rem;
+            font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.25rem;
         }
 
         .timeline-university {
             font-size: 0.9rem;
             color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Expanding Details Card */
+        .timeline-details-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0;
+            width: 100%;
+            max-width: 420px;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+        }
+
+        .timeline-details-card.expanded {
+            max-height: 500px;
+            opacity: 1;
+            transform: translateY(0);
+            padding: 1.5rem;
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 30px rgba(0, 217, 255, 0.12);
+        }
+
+        .card-header {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .card-detail {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .card-detail strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .click-prompt {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-circle-wrapper:hover .click-prompt {
+            opacity: 1;
         }
 
         /* ============ RESPONSIVE TIMELINE ============ */
         @media (max-width: 1024px) {
-            .timeline-items {
-                flex-direction: column;
-                align-items: center;
-                gap: 3rem;
-            }
-
-            .timeline-item {
-                position: relative;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .timeline-item-bottom {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                transform: none;
-                margin-top: 2rem;
-            }
-
-            .timeline-circle {
-                width: 110px;
-                height: 110px;
-            }
-
-            .timeline-popup {
-                position: relative;
-                transform: scale(0);
-                opacity: 0;
-                bottom: auto;
-                margin-top: 1rem;
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .timeline-popup.visible {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            .timeline-popup::after {
-                display: none;
-            }
-
-            /* Hide SVG on tablets and below */
-            .timeline-svg-connector {
-                display: none;
+            .timeline-row-double-master {
+                column-gap: 1.5rem;
             }
         }
 
@@ -513,12 +447,33 @@
                 font-size: 1rem;
             }
 
-            .timeline-container {
-                padding: 2rem 0.5rem 10rem 0.5rem;
+            .timeline-row-double-master {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4rem;
             }
 
-            .timeline-items {
-                gap: 2rem;
+            .timeline-row-double-master::before,
+            .vertical-connector-line {
+                display: none !important;
+            }
+
+            .timeline-grid-item {
+                justify-self: center !important;
+                text-align: center !important;
+            }
+
+            .timeline-container::before {
+                content: '';
+                position: absolute;
+                top: 2rem;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 3px;
+                background: linear-gradient(to bottom, var(--primary-color) 0%, rgba(0, 217, 255, 0.1) 100%);
+                z-index: 1;
             }
 
             .timeline-circle {
@@ -526,28 +481,8 @@
                 height: 100px;
             }
 
-            .timeline-year {
-                font-size: 1.1rem;
-            }
-
-            .timeline-degree {
-                font-size: 0.9rem;
-            }
-
-            .timeline-university {
-                font-size: 0.85rem;
-            }
-
-            .timeline-info {
-                padding: 0;
-            }
-
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .certifications-grid {
-                grid-template-columns: 1fr;
+            .timeline-details-card.expanded {
+                max-width: 100%;
             }
         }
     </style>
@@ -561,14 +496,23 @@
                 <a href="index.html" class="logo" title="Aryan Ram - Home">ARYAN<span>.</span></a>
                 
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#expertise" class="nav-link">Expertise</a></li>
-                    <li><a href="index.html#featured-projects" class="nav-link">Projects</a></li>
-                    <li><a href="education.html" class="nav-link active">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="achievements.html" class="nav-link">Achievements</a></li>
-                    <li><a href="index.html#footer" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="index.html#expertise" class="nav-link" data-i18n="nav-expertise">Expertise</a></li>
+                    <li><a href="index.html#featured-projects" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="education.html" class="nav-link active" data-i18n="nav-education">Education</a></li>
+                    <li><a href="experience.html" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="achievements.html" class="nav-link" data-i18n="nav-achievements">Achievements</a></li>
+                    <li><a href="index.html#footer" class="nav-link" data-i18n="nav-contact">Contact</a></li>
                 </ul>
+                
+                <div class="lang-selector-wrapper">
+                    <select id="langSelect" aria-label="Select Language" class="lang-select">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
                 
                 <div class="header-controls">
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -581,112 +525,107 @@
         </nav>
     </header>
 
+    <main id="main-content">
     <section class="page-hero">
-        <h1>Educational Qualifications</h1>
-        <p>Academic credentials, specialized certifications, and continuous learning initiatives that demonstrate expertise and commitment to professional development in mechanical engineering.</p>
+        <h1 data-i18n="edu-hero-title">Educational Qualifications</h1>
+        <p data-i18n="edu-hero-desc">Academic credentials, specialized certifications, and continuous learning initiatives that demonstrate expertise and commitment to professional development in mechanical engineering.</p>
     </section>
 
     <section class="education-section" id="academic-education" aria-label="Academic Education">
         <div class="education-container">
-            <h2 class="section-title">Academic Degrees</h2>
+            <h2 class="section-title" data-i18n="edu-sectitle-degrees">Academic Degrees</h2>
             
             <div class="timeline-wrapper">
-                <div class="timeline-svg-connector" id="timelineSvgContainer">
-                    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
-                        <path class="connector-line" d="M 600 130 Q 600 240, 750 260 L 900 350" />
-                        <polygon class="connector-arrow" points="900,350 885,340 895,332" />
-                        
-                        <path class="connector-line" d="M 1000 130 Q 1000 240, 950 260 L 900 350" />
-                        <polygon class="connector-arrow" points="900,350 898,335 912,340" />
-                    </svg>
-                </div>
-
                 <div class="timeline-container">
-                    <div class="timeline-items">
-                        <div class="timeline-item timeline-item-top" style="--position: 10%;">
-                            <div class="timeline-circle-wrapper">
-                                <div class="timeline-popup hidden" id="popup-a">
-                                    <div class="popup-header">Bachelor of Technology (B.Tech)</div>
-                                    <div class="popup-detail"><strong>Degree:</strong> B.Tech Mechanical Engineering</div>
-                                    <div class="popup-detail"><strong>Year:</strong> 2018 - 2022</div>
-                                    <div class="popup-detail"><strong>Institution:</strong> Vellore Institute of Technology(VIT) Bhopal</div>
-                                    <div class="popup-detail"><strong>Location:</strong> Bhopal, India</div>
-                                    <div class="popup-detail"><strong>GPA:</strong> 8.2/10.0</div>
-                                    <div class="popup-detail"><strong>Focus:</strong> Mechanical Engineering Principles, Thermodynamics, Fluid Mechanics, Manufacturing Processes, CAD Design, Material Engineering and Technology</div>
-                                </div>
+                    
+                    <!-- Row 1: VIT Bhopal (B.Tech) -->
+                    <div class="timeline-row-vit">
+                        <div class="timeline-grid-item vit-node">
+                            <div class="timeline-circle-wrapper" onclick="toggleDetails('card-vit')">
                                 <div class="timeline-circle" id="circle-a">
                                     <img src="./images/education/Vellore_Institute_of_Technology_seal_2017.svg.png" alt="VIT Bhopal Logo" class="university-logo">
                                 </div>
+                                <div class="timeline-info">
+                                    <p class="timeline-year" data-i18n="edu-btech-yr">2018 - 2022</p>
+                                    <p class="timeline-degree" data-i18n="edu-btech-title">Bachelor of Technology (B.Tech)</p>
+                                    <p class="timeline-university" data-i18n="edu-btech-inst">VIT Bhopal, India</p>
+                                    <span class="click-prompt" data-i18n="edu-click-prompt">Click for Details</span>
+                                </div>
                             </div>
-                            <div class="timeline-info">
-                                <p class="timeline-year">2022</p>
-                                <p class="timeline-degree">Bachelor of Technology (B.Tech). Mechanical Engineering</p>
-                                <p class="timeline-university">Vellore Institute of Technology(VIT) Bhopal, India</p>
+                            <div class="timeline-details-card" id="card-vit">
+                                <div class="card-header" data-i18n="edu-btech-head">B.Tech Mechanical Engineering</div>
+                                <div class="card-detail"><strong>GPA:</strong> <span data-i18n="edu-btech-det-1">8.2 / 10.0</span></div>
+                                <div class="card-detail"><strong>Focus Areas:</strong> <span data-i18n="edu-btech-det-2">Thermodynamics, Fluid Mechanics, Manufacturing Processes, CAD Design, Materials Engineering & Technology.</span></div>
+                                <div class="card-detail"><strong>Location:</strong> <span data-i18n="edu-btech-det-3">Bhopal, India</span></div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="timeline-item timeline-item-top" style="--position: 35%;">
-                            <div class="timeline-circle-wrapper">
-                                <div class="timeline-popup hidden" id="popup-b">
-                                    <div class="popup-header">Master of Engineering (M.Eng)</div>
-                                    <div class="popup-detail"><strong>Degree:</strong> Masters of Engineering Manufacturing Engineering</div>
-                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present</div>
-                                    <div class="popup-detail"><strong>Institution:</strong> UCD, Dublin</div>
-                                    <div class="popup-detail"><strong>Location:</strong> Dublin, Ireland</div>
-                                    <div class="popup-detail"><strong>Thesis:</strong> Digital Manufacturing for Innovative Ecosystems and Sustainable Manufacturing</div>
-                                    <div class="popup-detail"><strong>Focus:</strong> Sustainable Materials, Advanced Manufacturing Processes, Process Optimization, AI in Quality Engineering</div>
-                                </div>
+                    <!-- Vertical connecting line from VIT to the EIT Master hub -->
+                    <div class="vertical-connector-line"></div>
+
+                    <!-- Row 2: UCD (Left), EIT (Middle Hub), SUPSI (Right) -->
+                    <div class="timeline-row-double-master">
+                        
+                        <!-- Left Node: UCD Dublin -->
+                        <div class="timeline-grid-item ucd-node">
+                            <div class="timeline-circle-wrapper" onclick="toggleDetails('card-ucd')">
                                 <div class="timeline-circle" id="circle-b">
                                     <img src="./images/education/images-Photoroom-removebg-preview.png" alt="UCD Logo" class="university-logo">
                                 </div>
+                                <div class="timeline-info">
+                                    <p class="timeline-year" data-i18n="edu-meng-yr">2024 - Present</p>
+                                    <p class="timeline-degree" data-i18n="edu-meng-title">M.Eng Manufacturing Engineering</p>
+                                    <p class="timeline-university" data-i18n="edu-meng-inst">UCD, Dublin, Ireland</p>
+                                    <span class="click-prompt" data-i18n="edu-click-prompt">Click for Details</span>
+                                </div>
                             </div>
-                            <div class="timeline-info">
-                                <p class="timeline-year">2024 - Present</p>
-                                <p class="timeline-degree">M.Eng Manufacturing Engineering</p>
-                                <p class="timeline-university">UCD, Dublin, Ireland</p>
+                            <div class="timeline-details-card" id="card-ucd">
+                                <div class="card-header" data-i18n="edu-meng-head">Double Master's Program - Part 1</div>
+                                <div class="card-detail"><strong>Focus Areas:</strong> <span data-i18n="edu-meng-det-1">Sustainable Materials, Advanced Manufacturing, Process Optimization, AI in Quality Engineering.</span></div>
+                                <div class="card-detail"><strong>Thesis:</strong> <span data-i18n="edu-meng-det-2">Digital Manufacturing for Innovative Ecosystems and Sustainable Manufacturing.</span></div>
+                                <div class="card-detail"><strong>Location:</strong> <span data-i18n="edu-meng-det-3">Dublin, Ireland</span></div>
                             </div>
                         </div>
 
-                        <div class="timeline-item timeline-item-bottom" style="--position: 75%;">
-                            <div class="timeline-circle-wrapper">
-                                <div class="timeline-popup hidden" id="popup-d">
-                                    <div class="popup-header">EIT Manufacturing</div>
-                                    <div class="popup-detail"><strong>Programme Type:</strong> European Master's with dual/triple degree pathways</div>
-                                    <div class="popup-detail"><strong>Co-Funded by:</strong> European Union & EIT (European Institute of Innovation and Technology)</div>
-                                    <div class="popup-detail"><strong>Year:</strong> 2024 - Present (as part of UCD & SUPSI)</div>
-                                    <div class="popup-detail"><strong>Focus:</strong> Innovation & Entrepreneurship + Manufacturing Excellence</div>
-                                    <div class="popup-detail"><strong>Status:</strong> Parallel with M.Eng & MSE programmes</div>
-                                </div>
+                        <!-- Center Node: EIT Manufacturing (Overarching coordinator & hub) -->
+                        <div class="timeline-grid-item eit-node">
+                            <div class="timeline-circle-wrapper" onclick="toggleDetails('card-eit')">
                                 <div class="timeline-circle" id="circle-d">
                                     <img src="./images/education/eit_manufacturing_logo-removebg-preview-2.png" alt="EIT Manufacturing Logo" class="university-logo">
                                 </div>
+                                <div class="timeline-info">
+                                    <p class="timeline-year" data-i18n="edu-eit-yr">2024 - Present</p>
+                                    <p class="timeline-degree" data-i18n="edu-eit-title">EIT Manufacturing double degree program</p>
+                                    <p class="timeline-university" data-i18n="edu-eit-inst">Co-Funded by the European Union</p>
+                                    <span class="click-prompt" data-i18n="edu-click-prompt">Click for Details</span>
+                                </div>
                             </div>
-                            <div class="timeline-info">
-                                <p class="timeline-year">2024 - Present</p>
-                                <p class="timeline-degree">EIT Manufacturing | Co-Funded by European Commission</p>
-                                <p class="timeline-university">Multi-Location Programme</p>
+                            <div class="timeline-details-card" id="card-eit">
+                                <div class="card-header" data-i18n="edu-eit-head">Joint Integration & Innovation Program</div>
+                                <div class="card-detail"><strong>Focus:</strong> <span data-i18n="edu-eit-det-1">Innovation & Entrepreneurship combined with Manufacturing Excellence.</span></div>
+                                <div class="card-detail"><strong>Program Role:</strong> <span data-i18n="edu-eit-det-2">Serves as the overarching framework connecting the M.Eng (UCD) and MSE (SUPSI) degrees into a unified European Double Degree pathway.</span></div>
                             </div>
                         </div>
 
-                        <div class="timeline-item timeline-item-top" style="--position: 60%;">
-                            <div class="timeline-circle-wrapper">
-                                <div class="timeline-popup hidden" id="popup-c">
-                                    <div class="popup-header">Master of Science and Engineering (MSE)</div>
-                                    <div class="popup-detail"><strong>Qualification:</strong> Business Engineering</div>
-                                    <div class="popup-detail"><strong>Year:</strong> 2025 - Present</div>
-                                    <div class="popup-detail"><strong>Institution:</strong> Scuola universitaria professionale della Svizzera italiana - SUPSI</div>
-                                    <div class="popup-detail"><strong>Location:</strong> Lugano, Switzerland</div>
-                                    <div class="popup-detail"><strong>Specialization:</strong> ISO 9001, Quality Control, Continuous Improvement</div>
-                                    <div class="popup-detail"><strong>Focus:</strong> Quality Management Systems Implementation, Statistical Process Control, ASTM Standards</div>
-                                </div>
+                        <!-- Right Node: SUPSI Switzerland -->
+                        <div class="timeline-grid-item supsi-node">
+                            <div class="timeline-circle-wrapper" onclick="toggleDetails('card-supsi')">
                                 <div class="timeline-circle" id="circle-c">
                                     <img src="./images/education/Logo_of_SUPSI_Scuola_universitaria_professionale_della_Svizzera_italiana_01.png" alt="SUPSI Logo" class="university-logo">
                                 </div>
+                                <div class="timeline-info">
+                                    <p class="timeline-year" data-i18n="edu-mse-yr">2025 - Present</p>
+                                    <p class="timeline-degree" data-i18n="edu-mse-title">MSE Business Engineering</p>
+                                    <p class="timeline-university" data-i18n="edu-mse-inst">SUPSI, Lugano, Switzerland</p>
+                                    <span class="click-prompt" data-i18n="edu-click-prompt">Click for Details</span>
+                                </div>
                             </div>
-                            <div class="timeline-info">
-                                <p class="timeline-year">2025 - Present</p>
-                                <p class="timeline-degree">MSE Business Engineering</p>
-                                <p class="timeline-university">Lugano, Switzerland</p>
+                            <div class="timeline-details-card" id="card-supsi">
+                                <div class="card-header" data-i18n="edu-mse-head">Double Master's Program - Part 2</div>
+                                <div class="card-detail"><strong>Specialization:</strong> <span data-i18n="edu-mse-det-1">Quality Control, QMS (ISO 9001), Continuous Improvement.</span></div>
+                                <div class="card-detail"><strong>Focus Areas:</strong> <span data-i18n="edu-mse-det-2">Statistical Process Control, ASTM Quality Standards.</span></div>
+                                <div class="card-detail"><strong>Location:</strong> <span data-i18n="edu-mse-det-3">Lugano, Switzerland</span></div>
                             </div>
                         </div>
 
@@ -839,18 +778,19 @@
             <a href="index.html#footer" class="btn btn-primary btn-large">Get In Touch →</a>
         </div>
     </section>
+    </main>
 
     <footer role="contentinfo" id="footer">
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-section">
-                    <h3>Aryan Ram</h3>
-                    <p>Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
+                    <h3 data-i18n="footer-title">Aryan Ram</h3>
+                    <p data-i18n="footer-subtitle">Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
                     <p class="footer-email"><strong>Email:</strong> <a href="mailto:iamaryanram@gmail.com">iamaryanram@gmail.com</a></p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Quick Navigation</h4>
+                    <h4 data-i18n="footer-nav-title-1">Quick Navigation</h4>
                     <nav aria-label="Footer Quick Links">
                         <ul>
                             <li><a href="index.html#hero">Home</a></li>
@@ -862,7 +802,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Portfolio</h4>
+                    <h4 data-i18n="footer-nav-title-2">Portfolio</h4>
                     <nav aria-label="Footer Portfolio Links">
                         <ul>
                             <li><a href="achievements.html">Achievements</a></li>
@@ -874,7 +814,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Connect With Me</h4>
+                    <h4 data-i18n="footer-connect-title">Connect With Me</h4>
                     <div class="social-icons" aria-label="Social Media Links">
                         <a href="https://linkedin.com/in/aryan-ram-8b5a2b1a9/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -902,103 +842,31 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
-                <p>Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
-                <p style="font-size: 11px; margin-top: 10px; color: #999;">Last Updated: April 2026</p>
+                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
+                <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
             </div>
         </div>
     </footer>
-
-    <div id="main-content" style="display: none;"></div>
 
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
     
     <script>
-        // Update SVG viewBox on window resize for responsive design
-        function updateTimelineSvg() {
-            const container = document.getElementById('timelineSvgContainer');
-            const items = document.querySelectorAll('.timeline-circle');
+        // Toggle card details
+        function toggleDetails(cardId) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
             
-            if (!container || items.length === 0) return;
-            
-            // Get positions of circles
-            const positions = Array.from(items).map(item => {
-                const rect = item.getBoundingClientRect();
-                return {
-                    x: rect.left + rect.width / 2,
-                    y: rect.top + rect.height / 2
-                };
-            });
-            
-            // Only update on desktop view
-            if (window.innerWidth > 1024) {
-                const containerRect = container.getBoundingClientRect();
-                const svg = container.querySelector('svg');
-                
-                if (svg && positions.length === 4) {
-                    // Relative positions within container
-                    const relativePositions = positions.map(pos => ({
-                        x: pos.x - containerRect.left,
-                        y: pos.y - containerRect.top
-                    }));
-                    
-                    // Update paths dynamically if needed
-                    // For now, keep static SVG paths
+            // Close other cards to keep layout tidy
+            document.querySelectorAll('.timeline-details-card').forEach(c => {
+                if (c.id !== cardId) {
+                    c.classList.remove('expanded');
                 }
-            }
-        }
-
-        // Timeline Popup Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const timelineCircles = document.querySelectorAll('.timeline-circle');
-            
-            timelineCircles.forEach(circle => {
-                circle.addEventListener('mouseenter', function() {
-                    const circleId = this.id;
-                    const popupId = `popup-${circleId.split('-')[1]}`;
-                    const popup = document.getElementById(popupId);
-                    
-                    if (popup) {
-                        document.querySelectorAll('.timeline-popup').forEach(p => {
-                            p.classList.remove('visible');
-                            p.classList.add('hidden');
-                        });
-                        
-                        popup.classList.remove('hidden');
-                        popup.classList.add('visible');
-                    }
-                });
-                
-                circle.addEventListener('mouseleave', function() {
-                    const circleId = this.id;
-                    const popupId = `popup-${circleId.split('-')[1]}`;
-                    const popup = document.getElementById(popupId);
-                    
-                    if (popup) {
-                        popup.classList.remove('visible');
-                        popup.classList.add('hidden');
-                    }
-                });
-
-                // Touch support for mobile
-                circle.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
-                    const circleId = this.id;
-                    const popupId = `popup-${circleId.split('-')[1]}`;
-                    const popup = document.getElementById(popupId);
-                    
-                    if (popup) {
-                        popup.classList.toggle('visible');
-                        popup.classList.toggle('hidden');
-                    }
-                });
             });
             
-            // Update SVG on resize
-            window.addEventListener('resize', updateTimelineSvg);
-            updateTimelineSvg();
-        });
+            card.classList.toggle('expanded');
+        }
     </script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
-    initThemeToggle();
     initScrollEffects();
     initCounterAnimation();
     initIntersectionObserver();
@@ -63,35 +62,6 @@ function updateActiveLink() {
             link.classList.add('active');
         }
     });
-}
-
-// ============ THEME TOGGLE ============
-function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
-
-    if (isDark) {
-        document.body.classList.add('dark-mode');
-        updateThemeIcon(true);
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            updateThemeIcon(isDarkMode);
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        });
-    }
-}
-
-function updateThemeIcon(isDark) {
-    const icon = document.querySelector('.theme-icon');
-    if (icon) {
-        icon.textContent = isDark ? '☀️' : '🌙';
-    }
 }
 
 // ============ SCROLL EFFECTS ============

@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script src="js/translations.js" defer></script>
     
     <style>
         /* ============ PROJECTS PAGE SPECIFIC STYLES ============ */
@@ -353,14 +354,23 @@
                 <a href="index.html" class="logo" title="Aryan Ram - Home">ARYAN<span>.</span></a>
                 
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#expertise" class="nav-link">Expertise</a></li>
-                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="achievements.html" class="nav-link">Achievements</a></li>
-                    <li><a href="#footer" class="nav-link">Contact</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav-home">Home</a></li>
+                    <li><a href="index.html#expertise" class="nav-link" data-i18n="nav-expertise">Expertise</a></li>
+                    <li><a href="projects.html" class="nav-link active" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="education.html" class="nav-link" data-i18n="nav-education">Education</a></li>
+                    <li><a href="experience.html" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="achievements.html" class="nav-link" data-i18n="nav-achievements">Achievements</a></li>
+                    <li><a href="#footer" class="nav-link" data-i18n="nav-contact">Contact</a></li>
                 </ul>
+                
+                <div class="lang-selector-wrapper">
+                    <select id="langSelect" aria-label="Select Language" class="lang-select">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                        <option value="it">IT</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
                 
                 <div class="header-controls">
                     <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -373,24 +383,25 @@
         </nav>
     </header>
 
+    <main id="main-content">
     <!-- ============ PAGE HERO ============ -->
     <section class="page-hero">
-        <h1>My Engineering Projects</h1>
-        <p>Explore detailed case studies showcasing innovative solutions, technical challenges overcome, and measurable impact across various engineering domains.</p>
+        <h1 data-i18n="proj-hero-title">My Engineering Projects</h1>
+        <p data-i18n="proj-hero-desc">Explore detailed case studies showcasing innovative solutions, technical challenges overcome, and measurable impact across various engineering domains.</p>
     </section>
 
     <!-- ============ PROJECTS SHOWCASE ============ -->
     <section class="projects-section" id="projects" aria-label="Engineering Projects">
         <div class="projects-container">
-            <h2 class="section-title">Featured Case Studies</h2>
+            <h2 class="section-title" data-i18n="sectitle-featured">Featured Case Studies</h2>
             
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <article class="project-card" id="project-1" role="article">
                     <div class="project-content">
                         <div class="project-number">Project 01</div>
-                        <h2>Sustainable Materials Innovation</h2>
-                        <p class="project-description">
+                        <h2 data-i18n="feat-title-1">Sustainable Materials Innovation</h2>
+                        <p class="project-description" data-i18n="proj-desc-1">
                             Developed viable commercial product prototypes utilizing organic byproducts. Formulated specialized blends of areca fiber, bagasse, and tea leaf powder to manufacture structurally sound disposable plates, eco-friendly pillow fillings, and moisture-resistant barrier coatings.
                         </p>
                         <div class="project-metrics">
@@ -429,8 +440,8 @@
                 <article class="project-card" id="project-2" role="article">
                     <div class="project-content">
                         <div class="project-number">Project 02</div>
-                        <h2>AI-Driven Quality Assurance System</h2>
-                        <p class="project-description">
+                        <h2 data-i18n="feat-title-2">AI-Driven Quality Assurance System</h2>
+                        <p class="project-description" data-i18n="proj-desc-2">
                             Designed an automated inspection workcell using an ABB GoFa collaborative robot and a high-resolution 3D camera to identify micro-scratches and dust on luxury watch dials. Leveraging the unsupervised PatchCore anomaly detection algorithm, this computer vision system achieved a 10 to 15-second cycle time per watch with zero false positives on flat dials.
                         </p>
                         <div class="project-metrics">
@@ -464,8 +475,8 @@
                 <article class="project-card" id="project-3" role="article">
                     <div class="project-content">
                         <div class="project-number">Project 03</div>
-                        <h2>Manufacturing Process Optimization</h2>
-                        <p class="project-description">
+                        <h2 data-i18n="feat-title-3">Manufacturing Process Optimization</h2>
+                        <p class="project-description" data-i18n="proj-desc-3">
                             Building a real-time Computer Vision system to assess occupational health on the factory floor. This pipeline uses AI pose estimation to map 3D human biomechanics, calculating critical joint angles to automatically generate Rapid Upper Limb Assessment (RULA) risk scores.
                         </p>
                         <div class="project-metrics">
@@ -489,7 +500,6 @@
                     <div class="project-image carousel" data-carousel>
                         <img class="carousel-image active" src="./images/projects/Gemini_Generated_Image_r6gmcyr6gmcyr6gm-2.png" alt="Manufacturing Process Optimization">
                         
-                        
                     </div>
                 </article>
             </div>
@@ -504,19 +514,20 @@
             <a href="#footer" class="btn btn-primary btn-large">Get In Touch →</a>
         </div>
     </section>
+    </main>
 
     <!-- ============ FOOTER ============ -->
     <footer role="contentinfo" id="footer">
         <div class="footer-content">
             <div class="footer-main">
                 <div class="footer-section">
-                    <h3>Aryan Ram</h3>
-                    <p>Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
+                    <h3 data-i18n="footer-title">Aryan Ram</h3>
+                    <p data-i18n="footer-subtitle">Mechanical Engineer | Innovation Architect | Quality Pioneer</p>
                     <p class="footer-email"><strong>Email:</strong> <a href="mailto:iamaryanram@gmail.com">iamaryanram@gmail.com</a></p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Quick Navigation</h4>
+                    <h4 data-i18n="footer-nav-title-1">Quick Navigation</h4>
                     <nav aria-label="Footer Quick Links">
                         <ul>
                             <li><a href="index.html#hero">Home</a></li>
@@ -528,7 +539,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Portfolio</h4>
+                    <h4 data-i18n="footer-nav-title-2">Portfolio</h4>
                     <nav aria-label="Footer Portfolio Links">
                         <ul>
                             <li><a href="achievements.html">Achievements</a></li>
@@ -540,7 +551,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Connect With Me</h4>
+                    <h4 data-i18n="footer-connect-title">Connect With Me</h4>
                     <div class="social-icons" aria-label="Social Media Links">
                         <a href="https://linkedin.com/in/aryan-ram-8b5a2b1a9/" class="social-icon" title="LinkedIn - Connect" aria-label="LinkedIn Profile">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -568,15 +579,12 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
-                <p>Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
-                <p style="font-size: 11px; margin-top: 10px; color: #999;">Last Updated: April 2026</p>
+                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
+                <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
             </div>
         </div>
     </footer>
-
-    <!-- Main Content ID for Skip Link -->
-    <div id="main-content" style="display: none;"></div>
 
     <!-- Scripts -->
     <script src="js/animations.js" defer></script>
