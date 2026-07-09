@@ -190,6 +190,67 @@
             .achievements-grid {
                 grid-template-columns: 1fr;
             }
+            .award-card {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+
+        /* Awards and Honors Styles */
+        .awards-section {
+            padding: 6rem 2rem;
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .awards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .award-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .award-icon {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background-color: rgba(0, 217, 255, 0.1);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .award-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -237,11 +298,10 @@
         <p data-i18n="ach-hero-desc">A verification of professional skills, continuous learning initiatives, and industry qualifications that validate my engineering capability.</p>
     </section>
 
-    <!-- ============ CERTIFICATIONS SECTION ============ -->
+    <!-- ============ CERTIFICATIONS SECTION (HIDDEN) ============
     <section class="achievements-section" aria-label="Certifications Showcase">
         <div class="achievements-container">
             
-            <!-- Category Filters -->
             <div class="filter-controls">
                 <button class="filter-btn active" onclick="filterCategory('all', event)" data-i18n="ach-filter-all">All Credentials</button>
                 <button class="filter-btn" onclick="filterCategory('ai-automation', event)" data-i18n="ach-filter-ai">AI & Analytics</button>
@@ -249,10 +309,8 @@
                 <button class="filter-btn" onclick="filterCategory('manufacturing-iot', event)" data-i18n="ach-filter-mfg">Manufacturing & IoT</button>
             </div>
 
-            <!-- Grid of Cards -->
             <div class="achievements-grid">
                 
-                <!-- Card 1 -->
                 <div class="certification-card" data-category="mechanical-cad" role="article">
                     <div>
                         <div class="certification-icon">⚙️</div>
@@ -262,7 +320,6 @@
                     <p class="certification-date" data-i18n="ach-card-date-1">Issued: 2022 | Valid</p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="certification-card" data-category="ai-automation" role="article">
                     <div>
                         <div class="certification-icon">🤖</div>
@@ -272,7 +329,6 @@
                     <p class="certification-date" data-i18n="ach-card-date-2">Issued: 2023 | Valid</p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="certification-card" data-category="ai-automation" role="article">
                     <div>
                         <div class="certification-icon">📊</div>
@@ -282,7 +338,6 @@
                     <p class="certification-date" data-i18n="ach-card-date-3">Issued: 2023 | Valid</p>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="certification-card" data-category="mechanical-cad" role="article">
                     <div>
                         <div class="certification-icon">🏗️</div>
@@ -292,7 +347,6 @@
                     <p class="certification-date" data-i18n="ach-card-date-4">Issued: 2021 | Valid</p>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="certification-card" data-category="manufacturing-iot" role="article">
                     <div>
                         <div class="certification-icon">🌱</div>
@@ -302,7 +356,6 @@
                     <p class="certification-date" data-i18n="ach-card-date-5">Issued: 2022 | Valid</p>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="certification-card" data-category="manufacturing-iot" role="article">
                     <div>
                         <div class="certification-icon">🔧</div>
@@ -312,6 +365,48 @@
                     <p class="certification-date" data-i18n="ach-card-date-6">Issued: 2023 | Valid</p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+    ============================================================ -->
+
+    <!-- ============ HONORS & AWARDS SECTION ============ -->
+    <section class="awards-section" aria-label="Honors and Awards">
+        <div class="achievements-container">
+            <h2 class="section-title" data-i18n="ach-awards-title" style="margin-bottom: 2rem; text-align: center;">Honors & Awards</h2>
+            <div class="awards-list">
+                <!-- Award 1 -->
+                <div class="award-card" role="article">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-info">
+                        <h3 data-i18n="ach-award-title-1">Scholarship & Grant - EIT Manufacturing</h3>
+                        <p data-i18n="ach-award-desc-1">Awarded a competitive fellowship and mobility grant for the Double Master's Program (UCD & SUPSI) by EIT Manufacturing (2024 - 2026).</p>
+                    </div>
+                </div>
+                <!-- Award 2 -->
+                <div class="award-card" role="article">
+                    <div class="award-icon">🥈</div>
+                    <div class="award-info">
+                        <h3 data-i18n="ach-award-title-2">3rd Place | EIT Manufacturing Startup Pitch Day</h3>
+                        <p data-i18n="ach-award-desc-2">Awarded 3rd place in Startup Pitch Day by EIT Manufacturing – Demo Day for innovative product viability and business modeling.</p>
+                    </div>
+                </div>
+                <!-- Award 3 -->
+                <div class="award-card" role="article">
+                    <div class="award-icon">💰</div>
+                    <div class="award-info">
+                        <h3 data-i18n="ach-award-title-3">Pre-Seed Funding Award</h3>
+                        <p data-i18n="ach-award-desc-3">Awarded pre-seed research and development funding for a sustainable organic-waste material development project.</p>
+                    </div>
+                </div>
+                <!-- Award 4 -->
+                <div class="award-card" role="article">
+                    <div class="award-icon">🏁</div>
+                    <div class="award-info">
+                        <h3 data-i18n="ach-award-title-4">Certificate of Achievement | Team Garvit Racing</h3>
+                        <p data-i18n="ach-award-desc-4">Received multiple event awards for off-road vehicle design and engineering excellence under SAEINDIA BAJA.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
