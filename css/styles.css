@@ -450,6 +450,46 @@ header {
     color: var(--text-dark);
 }
 
+/* Master Thesis Featured Card Special Theme */
+.featured-card.thesis-featured-card {
+    background: linear-gradient(145deg, #0d1520 0%, #152232 100%) !important;
+    border: 1.5px solid rgba(0, 217, 255, 0.4);
+    box-shadow: 0 12px 32px rgba(0, 217, 255, 0.15);
+}
+
+.featured-card.thesis-featured-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 16px 44px rgba(0, 217, 255, 0.28);
+}
+
+.featured-card.thesis-featured-card .featured-content h3 {
+    color: #FFFFFF !important;
+}
+
+.featured-card.thesis-featured-card .featured-content p {
+    color: #BAC7D5 !important;
+}
+
+.featured-card.thesis-featured-card .project-stats span {
+    color: #E2E8F0 !important;
+    background: rgba(0, 217, 255, 0.08) !important;
+    border: 1px solid rgba(0, 217, 255, 0.25) !important;
+}
+
+.featured-card.thesis-featured-card .project-category {
+    background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%) !important;
+    color: #0F1419 !important;
+    font-weight: 700;
+}
+
+.featured-card.thesis-featured-card .read-more {
+    color: #00D9FF !important;
+}
+
+.featured-card.thesis-featured-card .read-more:hover {
+    color: #FFFFFF !important;
+}
+
 .featured-content p {
     color: var(--text-light);
     margin-bottom: 1.5rem;

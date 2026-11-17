@@ -259,6 +259,87 @@
             direction: ltr;
         }
 
+        /* ============ MASTER THESIS SPECIAL THEME ============ */
+        #project-thesis.project-card {
+            background: linear-gradient(145deg, #0d1520 0%, #152232 50%, #0f1926 100%);
+            border: 2px solid rgba(0, 217, 255, 0.4);
+            box-shadow: 0 16px 48px rgba(0, 217, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        #project-thesis.project-card::before {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(255, 184, 0, 0.05) 50%, transparent 100%);
+            opacity: 1;
+        }
+
+        #project-thesis.project-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.28), 0 0 25px rgba(0, 217, 255, 0.2);
+            transform: translateY(-8px);
+        }
+
+        #project-thesis .project-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00D9FF;
+            background: rgba(0, 217, 255, 0.12);
+            border: 1px solid rgba(0, 217, 255, 0.35);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 1.2rem;
+        }
+
+        #project-thesis h2 {
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E0F7FA 60%, #00D9FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 20px rgba(0, 217, 255, 0.2);
+        }
+
+        #project-thesis .project-description {
+            color: #BAC7D5;
+            line-height: 1.85;
+        }
+
+        #project-thesis .project-metrics {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        #project-thesis .metric-label {
+            color: #00D9FF;
+            font-size: 0.82rem;
+            letter-spacing: 0.8px;
+        }
+
+        #project-thesis .metric-value {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-shadow: 0 0 12px rgba(0, 217, 255, 0.3);
+        }
+
+        #project-thesis .project-tag {
+            background-color: rgba(0, 217, 255, 0.12);
+            color: #7BE9FF;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        #project-thesis:hover .project-tag {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        #project-thesis .project-image img {
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .project-card {
@@ -481,6 +562,51 @@
                     </div>
                 </article>
 
+                <!-- Master's Thesis Project -->
+                <article class="project-card" id="project-thesis" role="article">
+                    <div class="project-content">
+                        <div class="project-number" data-i18n="proj-thesis-number">Master's Thesis Project • SUPSI & Timex Group</div>
+                        <h2 data-i18n="proj-thesis-title">Collaborative Robotic Workcell for Multi-Stage Quality Assurance in Luxury Watch Production</h2>
+                        <p class="project-description" data-i18n="proj-thesis-desc">
+                            Engineered and empirically validated an Industry 4.0 collaborative robotic workcell in partnership with Timex Group Luxury Division and SUPSI DTI Omnifactory. The system pairs an ABB GoFa (CRB 15000) cobot with a Mech-Mind 3D camera and custom vacuum EOAT to automate pneumatic water-resistance machine tending (Check 2) and optical surface inspection (Check 6). Pioneered an unsupervised Dual-Engine vision pipeline combining sliding-window PatchCore with 2D Fast Fourier Transform notch filtering, slashing curved sapphire false alarms from 32.0% to 2.0% with 96.0% recall. Features an event-sourced SQLite WAL ledger, client-side OpenXML BOM ingestion, and a conversational AI Quality Analyst, accelerating tray throughput by 5.0× with a 5.3-month CapEx amortization.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-label" data-i18n="thesis-metric-1-lbl">VISION AUROC / F1</div>
+                                <div class="metric-value">0.982 / 0.970 (Curved)</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label" data-i18n="thesis-metric-2-lbl">FALSE ALARM RATE</div>
+                                <div class="metric-value">2.0% (93.8% Reduction)</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label" data-i18n="thesis-metric-3-lbl">TRAY CYCLE SPEEDUP</div>
+                                <div class="metric-value">5.0× Faster (88s vs 480s)</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label" data-i18n="thesis-metric-4-lbl">CAPEX AMORTIZATION</div>
+                                <div class="metric-value">5.3 Mo. (870k CHF NPV)</div>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">ABB GoFa Cobot</span>
+                            <span class="project-tag">Unsupervised Anomaly Detection</span>
+                            <span class="project-tag">PatchCore & 2D FFT</span>
+                            <span class="project-tag">Timex Group & SUPSI</span>
+                            <span class="project-tag">Digital Twin</span>
+                            <span class="project-tag">Quality 4.0</span>
+                        </div>
+                    </div>
+                    <div class="project-image carousel" data-carousel>
+                        <img class="carousel-image active" src="./images/projects/thesis_robotic_workcell.png" alt="Collaborative Robotic Workcell Setup at SUPSI Omnifactory">
+                        <img class="carousel-image" src="./images/projects/thesis_inspection_dashboard.jpg" alt="Multi-Slot Live Cobot Inspection Dashboard">
+                        <img class="carousel-image" src="./images/projects/thesis_defect_benchmark.jpg" alt="Qualitative Defect Detection Benchmark on Curved Sapphire">
+                        <img class="carousel-image" src="./images/projects/thesis_cleanroom_tray.png" alt="Cleanroom 8-Slot Indexing Tray and Tooling">
+                        <img class="carousel-image" src="./images/projects/thesis_water_resistance_twin.png" alt="Pneumatic Water Resistance Test Simulator Digital Twin">
+                        <img class="carousel-image" src="./images/projects/thesis_system_schematic.jpg" alt="Robotic Workcell Architectural Schematic">
+                    </div>
+                </article>
+
                 <!-- Project 3 -->
                 <article class="project-card" id="project-3" role="article">
                     <div class="project-content">
@@ -597,7 +723,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
