@@ -57,10 +57,10 @@ const translations = {
         "test-title-3": "M. Clark, Senior Project Manager",
 
         "sectitle-skills": "Technical Skills Matrix",
-        "skill-cat-1": "Mechanical & Structural Design",
-        "skill-cat-2": "Digital Manufacturing & Robotics",
-        "skill-cat-3": "R&D & Quality Engineering",
-        "skill-cat-4": "Software & AI Frameworks",
+        "skill-cat-1": "Engineering & Design",
+        "skill-cat-2": "Quality & Process Engineering",
+        "skill-cat-3": "Technology, AI & Automation",
+        "skill-cat-4": "Materials & Testing",
 
         "sectitle-explore": "Explore My Portfolio",
         "explore-title-1": "Detailed Projects",
@@ -266,10 +266,10 @@ const translations = {
         "test-title-3": "M. Clark, Senior Project Manager",
 
         "sectitle-skills": "Technische Kompetenzmatrix",
-        "skill-cat-1": "Konstruktion & Strukturdesign",
-        "skill-cat-2": "Digitale Fabrik & Robotik",
-        "skill-cat-3": "F&E & Qualitätstechnik",
-        "skill-cat-4": "Software & KI-Frameworks",
+        "skill-cat-1": "Konstruktion & Design",
+        "skill-cat-2": "Qualität & Prozesstechnik",
+        "skill-cat-3": "Technologie, KI & Automatisierung",
+        "skill-cat-4": "Werkstoffe & Prüfung",
 
         "sectitle-explore": "Mein Portfolio erkunden",
         "explore-title-1": "Detaillierte Projekte",
@@ -475,10 +475,10 @@ const translations = {
         "test-title-3": "M. Clark, Senior Project Manager",
 
         "sectitle-skills": "Matrice delle Competenze Tecniche",
-        "skill-cat-1": "Progettazione Meccanica & Strutturale",
-        "skill-cat-2": "Manifattura Digitale & Robotica",
-        "skill-cat-3": "R&S & Ingegneria della Qualità",
-        "skill-cat-4": "Software & Framework di IA",
+        "skill-cat-1": "Progettazione & Design",
+        "skill-cat-2": "Qualità & Ingegneria di Processo",
+        "skill-cat-3": "Tecnologia, IA & Automazione",
+        "skill-cat-4": "Materiali & Test",
 
         "sectitle-explore": "Esplora il Mio Portfolio",
         "explore-title-1": "Progetti Dettagliati",
@@ -684,10 +684,10 @@ const translations = {
         "test-title-3": "M. Clark, Directeur de Projet Senior",
 
         "sectitle-skills": "Matrice des Compétences Techniques",
-        "skill-cat-1": "Conception Mécanique & Structurelle",
-        "skill-cat-2": "Manufacture Digitale & Robotique",
-        "skill-cat-3": "R&D & Ingénierie de la Qualité",
-        "skill-cat-4": "Logiciels & Frameworks d'IA",
+        "skill-cat-1": "Ingénierie & Conception",
+        "skill-cat-2": "Qualité & Ingénierie des Procédés",
+        "skill-cat-3": "Technologie, IA & Automatisation",
+        "skill-cat-4": "Matériaux & Essais",
 
         "sectitle-explore": "Explorer Mon Portfolio",
         "explore-title-1": "Projets Détaillés",
