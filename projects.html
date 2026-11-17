@@ -340,6 +340,118 @@
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
         }
 
+        /* Media Tabs & Video Embed for Thesis Card */
+        .thesis-media-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .media-tabs {
+            display: inline-flex;
+            gap: 0.5rem;
+            align-self: flex-start;
+            background: rgba(15, 23, 34, 0.85);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 4px;
+            border-radius: 24px;
+            backdrop-filter: blur(8px);
+        }
+
+        .media-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: transparent;
+            color: #BAC7D5;
+            border: none;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .media-tab:hover {
+            color: #00D9FF;
+        }
+
+        .media-tab.active {
+            background: #00D9FF;
+            color: #0F1419;
+            box-shadow: 0 2px 10px rgba(0, 217, 255, 0.3);
+        }
+
+        .thesis-video-frame {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+            background: #000;
+        }
+
+        .thesis-video-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .thesis-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-thesis-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%);
+            color: #0F1419;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 217, 255, 0.25);
+        }
+
+        .btn-thesis-video:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.4);
+            background: #00E5FF;
+        }
+
+        .thesis-link-external {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #00D9FF;
+            border: 1px solid rgba(0, 217, 255, 0.35);
+            background: rgba(0, 217, 255, 0.08);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.65rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .thesis-link-external:hover {
+            background: rgba(0, 217, 255, 0.18);
+            border-color: #00D9FF;
+            color: #FFFFFF;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .project-card {
@@ -596,14 +708,45 @@
                             <span class="project-tag">Digital Twin</span>
                             <span class="project-tag">Quality 4.0</span>
                         </div>
+                        <div class="thesis-actions">
+                            <button type="button" class="btn-thesis-video" id="playThesisVideoBtn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Watch Workcell Video Demo</span>
+                            </button>
+                            <a href="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="thesis-link-external" title="Open video in Google Drive">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                <span>Drive ↗</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-image carousel" data-carousel>
-                        <img class="carousel-image active" src="./images/projects/thesis_robotic_workcell.png" alt="Collaborative Robotic Workcell Setup at SUPSI Omnifactory">
-                        <img class="carousel-image" src="./images/projects/thesis_inspection_dashboard.jpg" alt="Multi-Slot Live Cobot Inspection Dashboard">
-                        <img class="carousel-image" src="./images/projects/thesis_defect_benchmark.jpg" alt="Qualitative Defect Detection Benchmark on Curved Sapphire">
-                        <img class="carousel-image" src="./images/projects/thesis_cleanroom_tray.png" alt="Cleanroom 8-Slot Indexing Tray and Tooling">
-                        <img class="carousel-image" src="./images/projects/thesis_water_resistance_twin.png" alt="Pneumatic Water Resistance Test Simulator Digital Twin">
-                        <img class="carousel-image" src="./images/projects/thesis_system_schematic.jpg" alt="Robotic Workcell Architectural Schematic">
+                    <div class="thesis-media-wrapper">
+                        <div class="media-tabs" role="tablist">
+                            <button type="button" class="media-tab active" data-tab="carousel" role="tab" aria-selected="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                                <span>Photos (6)</span>
+                            </button>
+                            <button type="button" class="media-tab" data-tab="video" role="tab" aria-selected="false">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <span>Video Demo</span>
+                            </button>
+                        </div>
+                        <div class="project-image carousel" data-carousel id="thesisCarousel">
+                            <img class="carousel-image active" src="./images/projects/thesis_robotic_workcell.png" alt="Collaborative Robotic Workcell Setup at SUPSI Omnifactory">
+                            <img class="carousel-image" src="./images/projects/thesis_inspection_dashboard.jpg" alt="Multi-Slot Live Cobot Inspection Dashboard">
+                            <img class="carousel-image" src="./images/projects/thesis_defect_benchmark.jpg" alt="Qualitative Defect Detection Benchmark on Curved Sapphire">
+                            <img class="carousel-image" src="./images/projects/thesis_cleanroom_tray.png" alt="Cleanroom 8-Slot Indexing Tray and Tooling">
+                            <img class="carousel-image" src="./images/projects/thesis_water_resistance_twin.png" alt="Pneumatic Water Resistance Test Simulator Digital Twin">
+                            <img class="carousel-image" src="./images/projects/thesis_system_schematic.jpg" alt="Robotic Workcell Architectural Schematic">
+                        </div>
+                        <div class="thesis-video-frame" id="thesisVideoFrame" style="display: none;">
+                            <iframe 
+                                src="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/preview" 
+                                width="100%" 
+                                height="350" 
+                                allow="autoplay; fullscreen"
+                                title="Collaborative Robotic Workcell Live Demonstration Video">
+                            </iframe>
+                        </div>
                     </div>
                 </article>
 
@@ -726,6 +869,7 @@
     <script src="js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Image Carousels
             document.querySelectorAll('[data-carousel]').forEach((carousel) => {
                 const images = carousel.querySelectorAll('img');
                 if (images.length <= 1) return;
@@ -738,6 +882,43 @@
                     images[current].classList.add('active');
                 }, 3000);
             });
+
+            // Master's Thesis Media Tab Switcher (Photos vs Video)
+            const mediaTabs = document.querySelectorAll('.media-tab');
+            const thesisCarousel = document.getElementById('thesisCarousel');
+            const thesisVideoFrame = document.getElementById('thesisVideoFrame');
+            const playThesisVideoBtn = document.getElementById('playThesisVideoBtn');
+
+            function switchThesisMedia(targetTab) {
+                mediaTabs.forEach(btn => {
+                    const isTarget = btn.getAttribute('data-tab') === targetTab;
+                    btn.classList.toggle('active', isTarget);
+                    btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+                });
+
+                if (targetTab === 'video') {
+                    if (thesisCarousel) thesisCarousel.style.display = 'none';
+                    if (thesisVideoFrame) thesisVideoFrame.style.display = 'block';
+                } else {
+                    if (thesisVideoFrame) thesisVideoFrame.style.display = 'none';
+                    if (thesisCarousel) thesisCarousel.style.display = 'block';
+                }
+            }
+
+            mediaTabs.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchThesisMedia(btn.getAttribute('data-tab'));
+                });
+            });
+
+            if (playThesisVideoBtn) {
+                playThesisVideoBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchThesisMedia('video');
+                    thesisVideoFrame?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            }
         });
     </script>
 </body>
