@@ -128,7 +128,7 @@ header {
    ============================================ */
 
 .hero {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background: linear-gradient(135deg, #F9F9F9 0%, #FFFFFF 100%);
 }
 
@@ -233,7 +233,7 @@ header {
    ============================================ */
 
 .expertise {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background-color: var(--bg-white);
 }
 
@@ -263,7 +263,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .expertise-card {
@@ -382,7 +382,7 @@ header {
    ============================================ */
 
 .featured-projects {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background-color: var(--bg-light);
 }
 
@@ -395,7 +395,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .featured-card {
@@ -522,7 +522,7 @@ header {
 
 .view-all-projects {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 /* ============================================
@@ -530,7 +530,7 @@ header {
    ============================================ */
 
 .portfolio-nav {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background-color: var(--bg-white);
 }
 
@@ -543,7 +543,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .nav-card {
@@ -599,7 +599,7 @@ header {
    ============================================ */
 
 .testimonials {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background-color: var(--bg-light);
 }
 
@@ -612,7 +612,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .testimonial-card {
@@ -682,7 +682,7 @@ header {
    ============================================ */
 
 .skills-section {
-    padding: 6rem 2rem;
+    padding: 3.5rem 2rem;
     background-color: var(--bg-white);
 }
 
@@ -695,7 +695,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .skill-category {
@@ -739,7 +739,7 @@ header {
    ============================================ */
 
 .cta-section {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%);
     text-align: center;
 }
@@ -769,7 +769,7 @@ header {
 footer {
     background-color: var(--secondary-color);
     color: var(--bg-white);
-    padding: 4rem 2rem 1rem;
+    padding: 3rem 2rem 1rem;
 }
 
 .footer-content {

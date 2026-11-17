@@ -142,7 +142,7 @@
     }
 
     .hero {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.25rem;
     }
 
     .hero-content h1 {
@@ -154,11 +154,23 @@
     }
 
     .expertise {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.25rem;
     }
 
     .featured-projects {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .portfolio-nav {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .testimonials {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .skills-section {
+        padding: 2.5rem 1.25rem;
     }
 
     .section-title {
@@ -174,11 +186,11 @@
     }
 
     .cta-section {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 1.25rem;
     }
 
     footer {
-        padding: 2rem 1.5rem 1rem;
+        padding: 2rem 1.25rem 1rem;
     }
 
     .skills-grid {

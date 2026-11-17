@@ -43,7 +43,7 @@
     <style>
         /* Education Page Specific Styles */
         .education-section {
-            padding: 6rem 2rem;
+            padding: 3.5rem 2rem;
             background-color: var(--bg-white);
         }
 
@@ -56,7 +56,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .education-card {
@@ -158,61 +158,14 @@
             transform: translateY(-2px);
         }
 
-        .certifications-section {
-            padding: 6rem 2rem;
+        #technical-training {
             background-color: var(--bg-light);
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .certification-card {
-            background-color: var(--bg-white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .certification-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .certification-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .certification-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .certification-issuer {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .certification-date {
-            color: var(--primary-color);
-            font-size: 0.85rem;
-            font-weight: 600;
         }
 
         .page-hero {
             background: linear-gradient(135deg, #0F1419 0%, #1A2332 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
@@ -232,14 +185,14 @@
 
         /* ============ TIMELINE STYLES ============ */
         .timeline-wrapper {
-            margin-top: 4rem;
+            margin-top: 2rem;
             position: relative;
             width: 100%;
         }
 
         .timeline-container {
             position: relative;
-            padding: 2rem 1rem;
+            padding: 1rem 0;
             width: 100%;
         }
 
@@ -645,54 +598,6 @@
         </div>
     </section>
 
-    <section class="certifications-section" id="certifications" aria-label="Professional Certifications">
-        <div class="education-container">
-            <h2 class="section-title">Professional Certifications</h2>
-            <div class="certifications-grid">
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">⚙️</div>
-                    <h4>Lean Six Sigma Black Belt</h4>
-                    <p class="certification-issuer">American Society for Quality (ASQ)</p>
-                    <p class="certification-date">Issued: 2022 | Valid</p>
-                </div>
-
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">🤖</div>
-                    <h4>Machine Learning Specialization</h4>
-                    <p class="certification-issuer">Coursera | Andrew Ng</p>
-                    <p class="certification-date">Issued: 2023 | Valid</p>
-                </div>
-
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">📊</div>
-                    <h4>Advanced Data Analytics</h4>
-                    <p class="certification-issuer">Microsoft | Professional Certificate</p>
-                    <p class="certification-date">Issued: 2023 | Valid</p>
-                </div>
-
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">🏗️</div>
-                    <h4>CAD & FEA Professional</h4>
-                    <p class="certification-issuer">Autodesk & ANSYS Certified</p>
-                    <p class="certification-date">Issued: 2021 | Valid</p>
-                </div>
-
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">🌱</div>
-                    <h4>Sustainable Manufacturing</h4>
-                    <p class="certification-issuer">International Association of Sustainable Manufacturing</p>
-                    <p class="certification-date">Issued: 2022 | Valid</p>
-                </div>
-
-                <div class="certification-card" role="article">
-                    <div class="certification-icon">🔧</div>
-                    <h4>Industrial IoT & Industry 4.0</h4>
-                    <p class="certification-issuer">Professional Development Institute</p>
-                    <p class="certification-date">Issued: 2023 | Valid</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="education-section" id="technical-training" aria-label="Technical Training">
         <div class="education-container">
@@ -859,7 +764,6 @@
         </div>
     </footer>
 
-    <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
     
     <script>
