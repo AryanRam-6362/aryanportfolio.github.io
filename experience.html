@@ -25,14 +25,14 @@
     <link rel="canonical" href="https://aryanram-6362.github.io/aryanportfolio.github.io/experience.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+    <link rel="stylesheet" href="css/animations.css?v=3">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <script src="js/translations.js" defer></script>
+    <script src="js/translations.js?v=3" defer></script>
     
     <style>
         /* Experience Timeline Page Styling */
@@ -258,8 +258,12 @@
 
         /* Responsive timeline */
         @media (max-width: 768px) {
+            .experience-section {
+                padding: 2.5rem 1rem;
+            }
+
             .vertical-spine {
-                left: 24px;
+                left: 16px;
                 transform: translateX(-50%);
                 width: 3px;
             }
@@ -273,11 +277,11 @@
 
             .node-dot-wrapper {
                 position: absolute;
-                left: 24px;
-                top: 1.5rem;
+                left: 16px;
+                top: 1.25rem;
                 transform: translate(-50%, -50%);
-                width: 40px;
-                height: 40px;
+                width: 32px;
+                height: 32px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -287,22 +291,22 @@
             }
 
             .node-dot {
-                width: 22px;
-                height: 22px;
+                width: 18px;
+                height: 18px;
                 border-width: 3px;
             }
 
             .node-date {
                 text-align: left !important;
-                padding-left: 55px;
+                padding-left: 36px;
                 padding-right: 0;
                 grid-column: auto !important;
                 grid-row: auto !important;
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .node-card-wrapper {
-                padding-left: 55px;
+                padding-left: 36px;
                 padding-right: 0;
                 width: 100%;
                 grid-column: auto !important;
@@ -310,7 +314,16 @@
             }
 
             .experience-card {
-                padding: 1.5rem;
+                padding: 1.25rem 1rem;
+            }
+
+            .experience-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .experience-company {
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
             }
         }
     </style>
@@ -549,7 +562,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-copy">© 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
                 <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
                 <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
             </div>
@@ -557,6 +570,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=3" defer></script>
 </body>
 </html>

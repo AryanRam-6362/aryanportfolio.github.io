@@ -15,7 +15,7 @@ const translations = {
         "footer-nav-title-1": "Quick Navigation",
         "footer-nav-title-2": "Portfolio",
         "footer-connect-title": "Connect With Me",
-        "footer-copy": "&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator",
+        "footer-copy": "© 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator",
         "footer-precision": "Built with precision. Designed with passion. Hosted on GitHub Pages.",
         "footer-date": "Last Updated: April 2026",
 
@@ -233,7 +233,7 @@ const translations = {
         "footer-nav-title-1": "Schnellnavigation",
         "footer-nav-title-2": "Portfolio",
         "footer-connect-title": "Kontakt",
-        "footer-copy": "&copy; 2026 Aryan Ram. Alle Rechte vorbehalten. | Maschinenbauingenieur | Designer | Innovator",
+        "footer-copy": "© 2026 Aryan Ram. Alle Rechte vorbehalten. | Maschinenbauingenieur | Designer | Innovator",
         "footer-precision": "Mit Präzision gebaut. Mit Leidenschaft gestaltet. Gehostet auf GitHub Pages.",
         "footer-date": "Letzte Aktualisierung: April 2026",
 
@@ -451,7 +451,7 @@ const translations = {
         "footer-nav-title-1": "Navigazione Rapida",
         "footer-nav-title-2": "Portfolio",
         "footer-connect-title": "Contattami",
-        "footer-copy": "&copy; 2026 Aryan Ram. Tutti i diritti riservati. | Ingegnere Meccanico | Designer | Innovatore",
+        "footer-copy": "© 2026 Aryan Ram. Tutti i diritti riservati. | Ingegnere Meccanico | Designer | Innovatore",
         "footer-precision": "Realizzato con precisione. Progettato con passione. Ospitato su GitHub Pages.",
         "footer-date": "Ultimo aggiornamento: Aprile 2026",
 
@@ -669,7 +669,7 @@ const translations = {
         "footer-nav-title-1": "Navigation Rapide",
         "footer-nav-title-2": "Portfolio",
         "footer-connect-title": "Me Contacter",
-        "footer-copy": "&copy; 2026 Aryan Ram. Tous droits réservés. | Ingénieur Mécanicien | Designer | Innovateur",
+        "footer-copy": "© 2026 Aryan Ram. Tous droits réservés. | Ingénieur Mécanicien | Designer | Innovateur",
         "footer-precision": "Conçu avec précision. Développé avec passion. Hébergé sur GitHub Pages.",
         "footer-date": "Dernière mise à jour: Avril 2026",
 

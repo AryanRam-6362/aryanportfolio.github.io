@@ -30,15 +30,15 @@
     <link rel="canonical" href="https://aryanram-6362.github.io/aryanportfolio.github.io/education.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
     
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/responsive.css?v=3">
+    <link rel="stylesheet" href="css/animations.css?v=3">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <script src="js/translations.js" defer></script>
+    <script src="js/translations.js?v=3" defer></script>
     
     <style>
         /* Education Page Specific Styles */
@@ -416,7 +416,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 4rem;
+                gap: 3.5rem;
             }
 
             .timeline-row-double-master::before,
@@ -427,6 +427,8 @@
             .timeline-grid-item {
                 justify-self: center !important;
                 text-align: center !important;
+                width: 100%;
+                max-width: 360px;
             }
 
             .timeline-container::before {
@@ -441,13 +443,33 @@
                 z-index: 1;
             }
 
+            .timeline-info {
+                position: relative;
+                z-index: 2;
+                background: var(--bg-white);
+                padding: 0.85rem 1.25rem;
+                border-radius: 10px;
+                border: 1px solid var(--border-color);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+                margin: 0.85rem auto;
+                width: 90%;
+                max-width: 320px;
+            }
+
             .timeline-circle {
                 width: 100px;
                 height: 100px;
+                z-index: 5;
+            }
+
+            .timeline-details-card {
+                position: relative;
+                z-index: 3;
+                background: var(--bg-white);
             }
 
             .timeline-details-card.expanded {
-                max-width: 100%;
+                max-width: 95%;
             }
         }
     </style>
@@ -757,14 +779,14 @@
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer-copy">&copy; 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
+                <p data-i18n="footer-copy">© 2026 Aryan Ram. All rights reserved. | Mechanical Engineer | Designer | Innovator</p>
                 <p data-i18n="footer-precision">Built with precision. Designed with passion. Hosted on GitHub Pages.</p>
                 <p style="font-size: 11px; margin-top: 10px; color: #999;" data-i18n="footer-date">Last Updated: April 2026</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=3" defer></script>
     
     <script>
         // Toggle card details
