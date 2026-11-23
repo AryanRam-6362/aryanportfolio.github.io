@@ -32,16 +32,16 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300D9FF' font-weight='800'>A</text></svg>">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=3">
-    <link rel="stylesheet" href="css/responsive.css?v=3">
-    <link rel="stylesheet" href="css/animations.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=4">
+    <link rel="stylesheet" href="css/responsive.css?v=4">
+    <link rel="stylesheet" href="css/animations.css?v=4">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <script src="js/translations.js?v=3" defer></script>
+    <script src="js/translations.js?v=4" defer></script>
     
     <style>
         /* ============ PROJECTS PAGE SPECIFIC STYLES ============ */
@@ -414,6 +414,231 @@
             max-height: 100%;
         }
 
+        /* Mobile-Optimized Video Toolbar */
+        .thesis-video-mobile-bar {
+            display: none;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            width: 100%;
+        }
+
+        .btn-video-theater,
+        .btn-video-drive-app {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+
+        .btn-video-theater {
+            background: rgba(0, 217, 255, 0.15);
+            color: #00D9FF;
+            border: 1px solid rgba(0, 217, 255, 0.4);
+        }
+
+        .btn-video-theater:hover {
+            background: #00D9FF;
+            color: #0F1419;
+        }
+
+        .btn-video-drive-app {
+            background: rgba(255, 255, 255, 0.08);
+            color: #BAC7D5;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-video-drive-app:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .thesis-video-mobile-bar {
+                display: flex;
+            }
+        }
+
+        /* Video Theater Lightbox Modal */
+        .video-theater-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .video-theater-modal.active {
+            display: flex;
+            animation: fadeInModal 0.25s ease forwards;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-theater-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(8, 12, 18, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .video-theater-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            background: #0f1724;
+            border: 1px solid rgba(0, 217, 255, 0.4);
+            border-radius: 16px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8), 0 0 32px rgba(0, 217, 255, 0.25);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-theater-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: rgba(15, 23, 36, 0.9);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .theater-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #00D9FF;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.2rem;
+        }
+
+        .video-theater-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        .theater-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theater-btn-app {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%);
+            color: #0F1419;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .theater-btn-app:hover {
+            background: #00E5FF;
+            transform: scale(1.04);
+        }
+
+        .video-theater-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .video-theater-close:hover {
+            background: #00D9FF;
+            color: #0F1419;
+            transform: scale(1.08);
+        }
+
+        .video-theater-player {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+
+        .video-theater-player iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-theater-footer {
+            padding: 1rem 1.25rem;
+            background: rgba(15, 23, 36, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .btn-theater-external {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #00D9FF 0%, #00B8D4 100%);
+            color: #0F1419;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            width: 100%;
+            max-width: 420px;
+            min-height: 48px;
+            box-shadow: 0 4px 16px rgba(0, 217, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-theater-external:hover {
+            background: #00E5FF;
+            transform: translateY(-2px);
+        }
+
+        .theater-tip {
+            font-size: 0.78rem;
+            color: #8C9BAE;
+            margin: 0;
+        }
+
         .thesis-actions {
             display: flex;
             align-items: center;
@@ -764,6 +989,16 @@
                             <img class="carousel-image" src="./images/projects/thesis_water_resistance_twin.png" alt="Pneumatic Water Resistance Test Simulator Digital Twin">
                             <img class="carousel-image" src="./images/projects/thesis_system_schematic.jpg" alt="Robotic Workcell Architectural Schematic">
                         </div>
+                        <div class="thesis-video-mobile-bar" id="thesisVideoMobileBar" style="display: none;">
+                            <button type="button" class="btn-video-theater" id="openTheaterBtn" aria-label="Open Fullscreen Theater Mode">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                                <span>Theater Mode</span>
+                            </button>
+                            <a href="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-video-drive-app" title="Open in Google Drive App">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                <span>Drive App ↗</span>
+                            </a>
+                        </div>
                         <div class="thesis-video-frame" id="thesisVideoFrame" style="display: none;">
                             <iframe 
                                 src="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/preview" 
@@ -890,8 +1125,46 @@
         </div>
     </footer>
 
+    <!-- Video Theater Lightbox Modal -->
+    <div class="video-theater-modal" id="videoTheaterModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="video-theater-overlay" id="theaterOverlay"></div>
+        <div class="video-theater-container">
+            <div class="video-theater-header">
+                <div class="video-theater-title-group">
+                    <span class="theater-badge">Master's Thesis Project</span>
+                    <h3 class="video-theater-title">Collaborative Robotic Workcell Demo</h3>
+                </div>
+                <div class="theater-header-actions">
+                    <a href="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="theater-btn-app" title="Open in Google Drive App">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        <span>Drive App ↗</span>
+                    </a>
+                    <button type="button" class="video-theater-close" id="closeTheaterBtn" aria-label="Close Theater Video">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="video-theater-player">
+                <iframe 
+                    id="theaterIframe"
+                    src=""
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                    title="Collaborative Robotic Workcell Demonstration Video">
+                </iframe>
+            </div>
+            <div class="video-theater-footer">
+                <a href="https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-theater-external">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Open in Google Drive / Native Player</span>
+                </a>
+                <p class="theater-tip">💡 Tip: On mobile devices, opening in Google Drive launches the native high-definition fullscreen player.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="js/main.js?v=3" defer></script>
+    <script src="js/main.js?v=4" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Image Carousels
@@ -912,6 +1185,7 @@
             const mediaTabs = document.querySelectorAll('.media-tab');
             const thesisCarousel = document.getElementById('thesisCarousel');
             const thesisVideoFrame = document.getElementById('thesisVideoFrame');
+            const thesisVideoMobileBar = document.getElementById('thesisVideoMobileBar');
             const playThesisVideoBtn = document.getElementById('playThesisVideoBtn');
 
             function switchThesisMedia(targetTab) {
@@ -924,8 +1198,10 @@
                 if (targetTab === 'video') {
                     if (thesisCarousel) thesisCarousel.style.display = 'none';
                     if (thesisVideoFrame) thesisVideoFrame.style.display = 'block';
+                    if (thesisVideoMobileBar) thesisVideoMobileBar.style.display = 'flex';
                 } else {
                     if (thesisVideoFrame) thesisVideoFrame.style.display = 'none';
+                    if (thesisVideoMobileBar) thesisVideoMobileBar.style.display = 'none';
                     if (thesisCarousel) thesisCarousel.style.display = 'block';
                 }
             }
@@ -937,11 +1213,72 @@
                 });
             });
 
+            // Theater Lightbox Modal Logic
+            const videoTheaterModal = document.getElementById('videoTheaterModal');
+            const theaterOverlay = document.getElementById('theaterOverlay');
+            const closeTheaterBtn = document.getElementById('closeTheaterBtn');
+            const openTheaterBtn = document.getElementById('openTheaterBtn');
+            const theaterIframe = document.getElementById('theaterIframe');
+            const driveVideoPreviewUrl = 'https://drive.google.com/file/d/1jhq_FNoxqpmgBMhDgkPPCTuU7TKsHt0H/preview';
+
+            function openTheater() {
+                if (theaterIframe && (!theaterIframe.src || theaterIframe.src === window.location.href)) {
+                    theaterIframe.src = driveVideoPreviewUrl;
+                }
+                if (videoTheaterModal) {
+                    videoTheaterModal.classList.add('active');
+                    videoTheaterModal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeTheater() {
+                if (videoTheaterModal) {
+                    videoTheaterModal.classList.remove('active');
+                    videoTheaterModal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+                if (theaterIframe) {
+                    theaterIframe.src = '';
+                }
+            }
+
+            if (openTheaterBtn) {
+                openTheaterBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openTheater();
+                });
+            }
+
+            if (closeTheaterBtn) {
+                closeTheaterBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeTheater();
+                });
+            }
+
+            if (theaterOverlay) {
+                theaterOverlay.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeTheater();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoTheaterModal && videoTheaterModal.classList.contains('active')) {
+                    closeTheater();
+                }
+            });
+
             if (playThesisVideoBtn) {
                 playThesisVideoBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    switchThesisMedia('video');
-                    thesisVideoFrame?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    if (window.innerWidth <= 768) {
+                        openTheater();
+                    } else {
+                        switchThesisMedia('video');
+                        thesisVideoFrame?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
                 });
             }
         });
